@@ -8,3 +8,7 @@
 /SLIT-Interfaces/build/
 /SLIT-Application/dist/
 /SLIT-Application/build/
+/SLIT-Server/SLIT-Server-ejb/dist/
+/SLIT-Server/dist/
+/SLIT-gui/dist/
+/SLIT-gui/build/
