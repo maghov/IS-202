@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@javafxprototype.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxprototype.FXMLHomepageController">
+   <children>
+      <Button layoutX="212.0" layoutY="129.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="176.0" text="Modul 1" />
+      <Button layoutX="212.0" layoutY="180.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="176.0" text="Modul 2" />
+      <Button layoutX="212.0" layoutY="228.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="176.0" text="Modul 3" />
+      <Button layoutX="212.0" layoutY="277.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="176.0" text="Modul 4" />
+      <Button layoutX="212.0" layoutY="325.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="176.0" text="Modul 5" />
+      <Label contentDisplay="CENTER" layoutX="238.0" layoutY="29.0" text="Moduler">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
