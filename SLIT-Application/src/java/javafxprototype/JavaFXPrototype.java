@@ -5,11 +5,14 @@
  */
 package javafxprototype;
 
+import ejb.server.ModuleSessionBeanRemote;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javax.ejb.EJB;
+import slitapplication.ModuleHandler;
 import slitapplication.UserHandler;
 
 /**
@@ -17,6 +20,9 @@ import slitapplication.UserHandler;
  * @author Johnjnsen
  */
 public class JavaFXPrototype extends Application {
+
+    @EJB
+    private static ModuleSessionBeanRemote moduleSessionBean;
    
     
     @Override
@@ -36,11 +42,17 @@ public class JavaFXPrototype extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        //launch(args);
         
-        UserHandler handler = new UserHandler(); 
+        ModuleHandler handler = new ModuleHandler();
         
-        System.out.println(handler.getBusinessMethod());
+        handler.getModuleMethod();
+        
+        //moduleSessionBean.getModuleNameByInt(1);
+        
+        //UserHandler handler = new UserHandler(); 
+        
+        //System.out.println(handler.getBusinessMethod());
     }
     
 }
