@@ -6,25 +6,49 @@
 package slitapplication;
 
 import ejb.server.UserSessionBeanRemote;
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafxprototype.JavaFXPrototype;
 import javax.ejb.EJB;
 
 /**
  *
  * @author Mohammad
  */
-public class Main {
+public class Main extends Application{
 
     @EJB
     private static UserSessionBeanRemote userSessionBean;
 
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add
+        (JavaFXPrototype.class.getResource("javafxprototype.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
     
+    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        UserHandler handler = new UserHandler(); 
-        
-        System.out.println(handler.getBusinessMethod());
+        launch(args);
     }
     
+    /**
+     * @param args the command line arguments
+     
+    public static void main(String[] args) {
+
+    }
+    */
 }

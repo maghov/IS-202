@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import slitapplication.UserHandler;
 
 /**
  *
@@ -36,6 +37,10 @@ public class JavaFXPrototype extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
+        UserHandler handler = new UserHandler(); 
+        
+        System.out.println(handler.getBusinessMethod());
     }
     
 }
