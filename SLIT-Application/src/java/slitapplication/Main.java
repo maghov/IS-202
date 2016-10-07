@@ -5,7 +5,11 @@
  */
 package slitapplication;
 
+import Framework.ModuleManager;
+import Framework.UserManager;
 import ejb.server.UserSessionBeanRemote;
+import java.security.MessageDigest;
+import java.util.List;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -19,36 +23,41 @@ import javax.ejb.EJB;
  *
  * @author Mohammad
  */
-public class Main extends Application{
+public class Main{
 
-    @EJB
-    private static UserSessionBeanRemote userSessionBean;
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add
-        (JavaFXPrototype.class.getResource("javafxprototype.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-    }
-    
-    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        /*ModuleManager manager = new ModuleManager(); 
+        
+        List<String> list = manager.getAllModules(); 
+        
+        for(String entity : list)
+        {
+            System.out.println(entity); 
+        }*/
+        
+        UserManager userManager = new UserManager(); 
+        
+        if(userManager.login("Nyranith", "Test123"))
+        {
+            System.out.println("Du er logget inn"); 
+        }
+        else 
+        {
+            System.out.println("Feil passord eller brukernavn");
+        }
+        
+        if(userManager.register("Magnus", "Test123", "Magnus Høvik", "test@outlook.com"))
+        {
+            System.out.println("GRATULERER ! DU HAR HERVED blitt med i klubben vår :D "); 
+        }
+        else 
+        {
+            System.out.println("Du fikk ikke lov til å være med idag"); 
+        }
     }
     
-    /**
-     * @param args the command line arguments
-     
-    public static void main(String[] args) {
-
-    }
-    */
 }

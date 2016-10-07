@@ -5,6 +5,7 @@
  */
 package ejb.server;
 
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -14,6 +15,8 @@ import javax.ejb.Remote;
 @Remote
 public interface ModuleSessionBeanRemote {
 
-    void getModuleNameByInt(int modulId);
+    String getModuleNameByInt(int modulId);
+    
+     List<String> getAllModules();
     
 }

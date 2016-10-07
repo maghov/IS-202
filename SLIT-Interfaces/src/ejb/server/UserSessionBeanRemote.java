@@ -16,4 +16,15 @@ public interface UserSessionBeanRemote {
 
     String businessMethod();
     
+    boolean login(String username, String password);
+    
+    /**
+     * 
+     * @param username
+     * @param password
+     * @param name
+     * @param mail
+     * @return
+     */
+    boolean register(String username, String password, String name, String mail); 
 }
