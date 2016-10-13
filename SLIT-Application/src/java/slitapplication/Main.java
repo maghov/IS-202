@@ -30,14 +30,14 @@ public class Main{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*ModuleManager manager = new ModuleManager(); 
+        ModuleManager manager = new ModuleManager(); 
         
         List<String> list = manager.getAllModules(); 
         
         for(String entity : list)
         {
             System.out.println(entity); 
-        }*/
+        }
         
         UserManager userManager = new UserManager(); 
         
