@@ -33,7 +33,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     public void handleButtonEvent(ActionEvent event) throws IOException {
-        System.out.println("You clicked me!");
+        System.out.println("Test!");
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomepage.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
