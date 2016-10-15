@@ -14,3 +14,5 @@
 /SLIT-gui/build/
 /SLIT-gui/nbproject/private/
 *.properties
+
+*.properties
