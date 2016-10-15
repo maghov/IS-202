@@ -26,5 +26,5 @@ public interface UserSessionBeanRemote {
      * @param mail
      * @return
      */
-    boolean register(String username, String password, String name, String mail); 
+    boolean register(String username, String password, String firstName, String lastName, String mail); 
 }

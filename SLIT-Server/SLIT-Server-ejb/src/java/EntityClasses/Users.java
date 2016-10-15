@@ -28,8 +28,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u"),
-    @NamedQuery(name = "Users.findById", query = "SELECT u FROM Users u WHERE u.id = :id"),
-    @NamedQuery(name = "Users.findByName", query = "SELECT u FROM Users u WHERE u.name = :name"),
+    @NamedQuery(name = "Users.findByuserID", query = "SELECT u FROM Users u WHERE u.userID = :userID"),
+    @NamedQuery(name = "Users.findByfirstName", query = "SELECT u FROM Users u WHERE u.firstName = :firstName"),
+    @NamedQuery(name = "Users.findBylastName", query = "SELECT u FROM Users u WHERE u.lastName = :lastName"),
     @NamedQuery(name = "Users.findByMail", query = "SELECT u FROM Users u WHERE u.mail = :mail"),
     @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
     @NamedQuery(name = "Users.findByUserName", query = "SELECT u FROM Users u WHERE u.userName = :userName"), 
@@ -41,13 +42,18 @@ public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "userID")
+    private Integer userID;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 128)
-    @Column(name = "name")
-    private String name;
+    @Column(name = "firstName")
+    private String firstName;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 128)
+    @Column(name = "lastName")
+    private String lastName;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 128)
@@ -67,32 +73,41 @@ public class Users implements Serializable {
     public Users() {
     }
 
-    public Users(Integer id) {
-        this.id = id;
+    public Users(Integer userID) {
+        this.userID = userID;
     }
 
-    public Users(Integer id, String name, String mail, String password, String userName) {
-        this.id = id;
-        this.name = name;
+    public Users(Integer userID, String firstName, String lastName, String mail, String password, String userName) {
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.mail = mail;
         this.password = password;
         this.userName = userName;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getuserID() {
+        return userID;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer userID) {
+        this.userID = userID;
     }
 
-    public String getName() {
-        return name;
+    public String getfirstName() {
+        return firstName;
+    }
+    
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getMail() {
@@ -122,7 +137,7 @@ public class Users implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (userID != null ? userID.hashCode() : 0);
         return hash;
     }
 
@@ -133,7 +148,7 @@ public class Users implements Serializable {
             return false;
         }
         Users other = (Users) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.userID == null && other.userID != null) || (this.userID != null && !this.userID.equals(other.userID))) {
             return false;
         }
         return true;
@@ -141,7 +156,7 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "EntityClasses.Users[ id=" + id + " ]";
+        return "EntityClasses.Users[ userID=" + userID + " ]";
     }
     
 }

@@ -77,14 +77,15 @@ public class UserSessionBean implements UserSessionBeanRemote {
     }
     
     @Override
-    public boolean register(String username, String password, String name, String mail)
+    public boolean register(String username, String password, String firstName, String lastName, String mail)
     {
         System.out.println(this.checkUserNameOrMail(username, mail));
         if(this.checkUserNameOrMail(username, mail))
             return false;
         
         Users user = new Users(); 
-        user.setName(name);
+        user.setfirstName(firstName);
+        user.setlastName(lastName);
         user.setUserName(username);
         user.setPassword(password);
         user.setMail(mail);

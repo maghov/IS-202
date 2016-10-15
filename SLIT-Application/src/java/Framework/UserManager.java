@@ -21,20 +21,21 @@ public class UserManager {
     private UserSessionBeanRemote lookupUserSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (UserSessionBeanRemote) c.lookup("java:comp/env/UserSessionBean");
+            //return (UserSessionBeanRemote) c.lookup("java:comp/env/UserSessionBean");
+            return (UserSessionBeanRemote) c.lookup("java:global/SLIT-Server-ejb/UserSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
-    
+        
     public boolean login(String username, String password)
     {
         return this.lookupUserSessionBeanRemote().login(username, password);
     }
     
-    public boolean register(String username, String password, String name, String mail) 
+    public boolean register(String username, String password, String firstName, String lastName, String mail) 
     {
-        return this.lookupUserSessionBeanRemote().register(username, password, name, mail);
+        return this.lookupUserSessionBeanRemote().register(username, password, firstName, lastName, mail);
     }
 }

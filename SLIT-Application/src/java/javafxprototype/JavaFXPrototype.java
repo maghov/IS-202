@@ -42,11 +42,11 @@ public class JavaFXPrototype extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
         
-        ModuleHandler handler = new ModuleHandler();
+        /*ModuleHandler handler = new ModuleHandler();
         
-        handler.getModuleMethod();
+        handler.getModuleMethod();*/
         
         //moduleSessionBean.getModuleNameByInt(1);
         

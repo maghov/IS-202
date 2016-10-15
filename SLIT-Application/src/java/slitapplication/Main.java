@@ -50,7 +50,7 @@ public class Main{
             System.out.println("Feil passord eller brukernavn");
         }
         
-        if(userManager.register("Magnus", "Test123", "Magnus Høvik", "test@outlook.com"))
+        if(userManager.register("Magnus", "Test123", "Magnus", "Høvik", "test@outlook.com"))
         {
             System.out.println("GRATULERER ! DU HAR HERVED blitt med i klubben vår :D "); 
         }

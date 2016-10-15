@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxprototype.FXMLRegisterPageController">
+   <children>
+      <Button layoutX="274.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleRegisterTask" text="Registrer" />
+      <TextField fx:id="firstNameRegister" layoutX="227.0" layoutY="73.0" promptText="Fornavn" />
+      <TextField fx:id="lastNameRegister" layoutX="227.0" layoutY="113.0" promptText="Etternavn" />
+      <TextField fx:id="emailRegister" layoutX="227.0" layoutY="155.0" promptText="Epost" />
+      <TextField fx:id="userNameRegister" layoutX="227.0" layoutY="200.0" promptText="Brukernavn" />
+      <Label fx:id="logRegistrerLabel" layoutX="157.0" layoutY="352.0" prefHeight="17.0" prefWidth="293.0" />
+      <PasswordField fx:id="passwordRegister" layoutX="228.0" layoutY="245.0" promptText="Passord" />
+   </children>
+</AnchorPane>
