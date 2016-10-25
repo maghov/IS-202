@@ -29,9 +29,9 @@ public class ModuleManager {
         }
     }
     
-    public String getModuleById(int moduleId) 
+    public String getModuleById(int moduleID) 
     {
-        return this.lookupModuleSessionBeanRemote().getModuleNameByInt(moduleId);
+        return this.lookupModuleSessionBeanRemote().getModuleNameByInt(moduleID);
     }
     
     public List<String> getAllModules()

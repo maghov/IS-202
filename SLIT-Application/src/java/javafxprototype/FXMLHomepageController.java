@@ -17,13 +17,9 @@ import javafx.scene.control.Button;
  * @author Mohammad
  */
 public class FXMLHomepageController implements Initializable {
-
-    @FXML
-    private Button modul1Button;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.modul1Button.setText("Test1");
     }   
     
 }

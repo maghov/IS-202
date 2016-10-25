@@ -42,6 +42,8 @@ public class FXMLRegisterPageController implements Initializable {
     private TextField userNameRegister;
     @FXML
     private Label logRegistrerLabel;
+    @FXML
+    private TextField PhoneRegister;
     /**
      * Initializes the controller class.
      */
@@ -52,8 +54,9 @@ public class FXMLRegisterPageController implements Initializable {
 
     @FXML
     private void handleRegisterTask(ActionEvent event) throws IOException {
+        
         if(this.userManager.register(this.userNameRegister.getText(), this.passwordRegister.getText(), this.firstNameRegister.getText(),
-        this.lastNameRegister.getText(), this.emailRegister.getText()))
+        this.lastNameRegister.getText(), this.emailRegister.getText(), this.PhoneRegister.getText()))
         {
             logRegistrerLabel.setText("Register successfull");
             
@@ -64,7 +67,7 @@ public class FXMLRegisterPageController implements Initializable {
             app_stage.setScene(document_page_scene);
             app_stage.show();
         }
-        else 
+        else
         {
             this.logRegistrerLabel.setText("Username of password is irrcorrect");
         }

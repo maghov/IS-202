@@ -68,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
         }
         else 
         {
-            this.logLabel.setText("Username of password is irrcorrect");
+            this.logLabel.setText("Username of password is incorrect");
         }
       }
     
