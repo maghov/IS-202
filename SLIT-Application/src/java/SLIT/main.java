@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxprototype;
+package SLIT;
 
 import ejb.server.ModuleSessionBeanRemote;
 import javafx.application.Application;
@@ -19,7 +19,7 @@ import slitapplication.UserHandler;
  *
  * @author Johnjnsen
  */
-public class JavaFXPrototype extends Application {
+public class main extends Application {
 
     @EJB
     private static ModuleSessionBeanRemote moduleSessionBean;
@@ -30,7 +30,7 @@ public class JavaFXPrototype extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add
-        (JavaFXPrototype.class.getResource("javafxprototype.css").toExternalForm());
+        (main.class.getResource("javafxprototype.css").toExternalForm());
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

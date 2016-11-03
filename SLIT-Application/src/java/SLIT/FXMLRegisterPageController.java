@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxprototype;
+package SLIT;
 
 import Framework.UserManager;
 import java.io.IOException;

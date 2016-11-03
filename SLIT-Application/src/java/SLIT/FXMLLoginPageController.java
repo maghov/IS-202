@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxprototype;
+package SLIT;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +27,7 @@ import Framework.UserManager;
  *
  * @author Phil
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLLoginPageController implements Initializable {
     
     public Label label;
     @FXML
@@ -39,8 +39,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label logLabel;
-    
-    
+   
     @FXML 
     public void goToRegisterButton(ActionEvent event) throws IOException {
         this.logLabel.setText("Sign in button pressed");
@@ -68,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
         }
         else 
         {
-            this.logLabel.setText("Username of password is incorrect");
+            this.logLabel.setText("Username or password is incorrect");
         }
       }
     
