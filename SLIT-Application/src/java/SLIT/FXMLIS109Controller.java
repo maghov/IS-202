@@ -32,11 +32,11 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private void handleBackTask(ActionEvent event) throws IOException {
         
-        Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
-        Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(VelgFag_page_scene);
-        app_stage.show();
+            Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
+            Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(VelgFag_page_scene);
+            app_stage.show();
         
         
     }
