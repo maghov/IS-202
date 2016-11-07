@@ -27,10 +27,10 @@ public class main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add
-        (main.class.getResource("javafxprototype.css").toExternalForm());
+        (main.class.getResource("slit.css").toExternalForm());
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

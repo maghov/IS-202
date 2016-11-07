@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/Mohammad/Documents/IS-202-develop/SLIT-Server/SLIT-Server-ejb/src/java/EntityClasses/Users.java</file>
-            <file>file:/Users/Mohammad/Documents/IS-202-develop/SLIT-Server/SLIT-Server-ejb/src/java/EntityClasses/Tutor.java</file>
-            <file>file:/Users/Mohammad/Documents/IS-202-develop/SLIT-Server/SLIT-Server-ejb/src/java/ejb/server/ModuleSessionBean.java</file>
-            <file>file:/Users/Mohammad/Documents/IS-202-develop/SLIT-Server/SLIT-Server-ejb/src/java/ejb/server/UserSessionBean.java</file>
-            <file>file:/Users/Mohammad/Documents/IS-202-develop/SLIT-Server/SLIT-Server-ejb/src/java/EntityClasses/Module.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
