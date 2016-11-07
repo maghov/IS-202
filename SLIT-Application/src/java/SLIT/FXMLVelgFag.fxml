@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="SLIT.FXMLVelgFagController" fx:controller="SLIT.FXMLVelgFagController">
+   <children>
+      <Button layoutX="213.0" layoutY="163.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-109" />
+      <Label layoutX="126.0" layoutY="24.0" text="Objektsorientert programmering">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="213.0" layoutY="247.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-110" />
+      <Button layoutX="575.0" mnemonicParsing="false" text="Logg ut" />
+   </children>
+</AnchorPane>
