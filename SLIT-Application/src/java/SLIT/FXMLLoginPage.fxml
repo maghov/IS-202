@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -13,6 +14,9 @@
       <TextField fx:id="userNameTextField" layoutX="220.0" layoutY="73.0" />
       <Label fx:id="logLabel" layoutX="14.0" layoutY="369.0" prefHeight="17.0" prefWidth="578.0" />
       <PasswordField fx:id="passwordTextField" layoutX="220.0" layoutY="114.0" />
-      <Label layoutX="271.0" layoutY="23.0" text="Innlogging" />
+      <Label layoutX="244.0" layoutY="21.0" text="Innlogging">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
    </children>
 </AnchorPane>

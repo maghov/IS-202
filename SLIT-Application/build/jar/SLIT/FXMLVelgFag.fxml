@@ -7,16 +7,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="SLIT.FXMLVelgFagController" fx:controller="SLIT.FXMLVelgFagController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SLIT.FXMLVelgFagController">
    <children>
-      <Button layoutX="213.0" layoutY="163.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-109" />
-      <Label layoutX="126.0" layoutY="24.0" text="Objektsorientert programmering">
+      <Button layoutX="88.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-109" />
+      <Label layoutX="126.0" layoutY="45.0" text="Objektsorientert programmering">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="213.0" layoutY="247.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-110" />
-      <Button layoutX="575.0" mnemonicParsing="false" text="Logg ut" />
+      <Button layoutX="338.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-110" />
+      <MenuBar layoutX="63.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="539.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Logg ut" />
+          <Menu mnemonicParsing="false" text="Min profil" />
+          <Menu mnemonicParsing="false" text="Hjelp" />
+        </menus>
+      </MenuBar>
+      <Button layoutY="1.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="63.0" text="Tilbake" />
+      <Button layoutX="205.0" layoutY="160.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" text="Krav for godkjenning" />
+      <Button layoutX="205.0" layoutY="107.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" text="Viktig informasjon" />
+      <Button layoutX="104.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="145.0" text="Kursplan" />
+      <Button layoutX="354.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="145.0" text="Kursplan" />
    </children>
 </AnchorPane>
