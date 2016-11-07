@@ -59,10 +59,10 @@ public class FXMLLoginPageController implements Initializable {
             logLabel.setText("Login successfull");
             
             System.out.println("Test!");
-            Parent home_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomepage.fxml"));
-            Scene home_page_scene = new Scene(home_page_parent);
+            Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
+            Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage.setScene(home_page_scene);
+            app_stage.setScene(VelgFag_page_scene);
             app_stage.show();
         }
         else 

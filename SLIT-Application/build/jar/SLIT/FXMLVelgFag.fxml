@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SLIT.FXMLVelgFagController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@slit.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SLIT.FXMLVelgFagController">
    <children>
       <Button layoutX="88.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="IS-109" />
       <Label layoutX="126.0" layoutY="45.0" text="Objektsorientert programmering">

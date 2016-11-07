@@ -61,15 +61,15 @@ public class FXMLRegisterPageController implements Initializable {
             logRegistrerLabel.setText("Register successfull");
             
             System.out.println("Test!");
-            Parent document_page_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-            Scene document_page_scene = new Scene(document_page_parent);
+            Parent LoginPage_page_parent = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
+            Scene LoginPage_page_scene = new Scene(LoginPage_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage.setScene(document_page_scene);
+            app_stage.setScene(LoginPage_page_scene);
             app_stage.show();
         }
         else
         {
-            this.logRegistrerLabel.setText("Username of password is irrcorrect");
+            this.logRegistrerLabel.setText("Username or password is incorrect");
         }
         
         
