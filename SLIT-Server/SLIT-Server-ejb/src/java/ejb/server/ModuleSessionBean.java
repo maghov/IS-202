@@ -17,6 +17,7 @@ import javax.persistence.TypedQuery;
  *
  * @author Mohammad
  */
+
 @Stateless
 public class ModuleSessionBean implements ModuleSessionBeanRemote {
 
@@ -25,10 +26,8 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
 
     
     @Override
-    public String getModuleNameByInt(int modulId) {
-        return em.find(Module.class, modulId).getTittel(); 
-        //System.out.println(em.find(Module.class, modulId).getTittel());
-        
+    public String getModuleNameByInt(int moduleID) {
+        return em.find(Module.class, moduleID).getModuleName(); 
     }
     
     @Override 
@@ -38,11 +37,11 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         
         List<Module> entites = query.getResultList(); 
         
-        List<String> result = new ArrayList<String>(); 
+        List<String> result = new ArrayList<>(); 
         
         for(Module module : entites)
         {
-            result.add(module.getTittel()); 
+            result.add(module.getModuleName()); 
         }
         
         return result; 

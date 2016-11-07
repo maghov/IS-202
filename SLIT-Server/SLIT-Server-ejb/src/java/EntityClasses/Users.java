@@ -7,6 +7,7 @@ package EntityClasses;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -28,47 +30,59 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u"),
-    @NamedQuery(name = "Users.findByuserID", query = "SELECT u FROM Users u WHERE u.userID = :userID"),
-    @NamedQuery(name = "Users.findByfirstName", query = "SELECT u FROM Users u WHERE u.firstName = :firstName"),
-    @NamedQuery(name = "Users.findBylastName", query = "SELECT u FROM Users u WHERE u.lastName = :lastName"),
-    @NamedQuery(name = "Users.findByMail", query = "SELECT u FROM Users u WHERE u.mail = :mail"),
-    @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
-    @NamedQuery(name = "Users.findByUserName", query = "SELECT u FROM Users u WHERE u.userName = :userName"), 
-    @NamedQuery(name = "Users.login", query = "SELECT u FROM Users u WHERE u.userName = :userName AND u.password = :password"),
-    @NamedQuery(name = "Users.findByUserNameOrMail", query = "SELECT u FROM Users u WHERE u.userName = :userName OR u.mail = :mail")})
+    @NamedQuery(name = "Users.findByUserID", query = "SELECT u FROM Users u WHERE u.userID = :userID"),
+    @NamedQuery(name = "Users.findByUserUserName", query = "SELECT u FROM Users u WHERE u.userUserName = :userUserName"),
+    @NamedQuery(name = "Users.findByUserPassword", query = "SELECT u FROM Users u WHERE u.userPassword = :userPassword"),
+    @NamedQuery(name = "Users.findByUserFirstName", query = "SELECT u FROM Users u WHERE u.userFirstName = :userFirstName"),
+    @NamedQuery(name = "Users.findByUserLastName", query = "SELECT u FROM Users u WHERE u.userLastName = :userLastName"),
+    @NamedQuery(name = "Users.findByUserEmail", query = "SELECT u FROM Users u WHERE u.userEmail = :userEmail"),
+    @NamedQuery(name = "Users.login", query = "SELECT u FROM Users u WHERE u.userUserName = :userUserName AND u.userPassword = :userPassword"),
+    @NamedQuery(name = "Users.findByUserPhone", query = "SELECT u FROM Users u WHERE u.userPhone = :userPhone"),
+    @NamedQuery(name=  "Users.findByUserNameOrMail", query = "SELECT u FROM Users u WHERE u.userUserName = :userUserName OR u.userEmail = :userEmail"),
+    @NamedQuery(name = "Users.findByUserTutor", query = "SELECT u FROM Users u WHERE u.userTutor = :userTutor")})
 public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "userID")
+    @Column(name = "user_ID")
     private Integer userID;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 128)
-    @Column(name = "firstName")
-    private String firstName;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 128)
-    @Column(name = "lastName")
-    private String lastName;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 128)
-    @Column(name = "mail")
-    private String mail;
+    @Size(min = 1, max = 64)
+    @Column(name = "user_UserName")
+    private String userUserName;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 64)
-    @Column(name = "password")
-    private String password;
+    @Column(name = "user_Password")
+    private String userPassword;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 64)
-    @Column(name = "userName")
-    private String userName;
+    @Column(name = "user_FirstName")
+    private String userFirstName;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 64)
+    @Column(name = "user_LastName")
+    private String userLastName;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 64)
+    @Column(name = "user_Email")
+    private String userEmail;
+    @Column(name = "user_Phone")
+    private String userPhone;
+    @Column(name = "user_Tutor")
+    private Boolean userTutor;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "users")
+    private Tutor tutor;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "users")
+    private Teacher teacher;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "users")
+    private Student student;
 
     public Users() {
     }
@@ -77,61 +91,101 @@ public class Users implements Serializable {
         this.userID = userID;
     }
 
-    public Users(Integer userID, String firstName, String lastName, String mail, String password, String userName) {
+    public Users(Integer userID, String userUserName, String userPassword, String userFirstName, String userLastName, String userEmail) {
         this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mail = mail;
-        this.password = password;
-        this.userName = userName;
+        this.userUserName = userUserName;
+        this.userPassword = userPassword;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
     }
 
-    public Integer getuserID() {
+    public Integer getUserID() {
         return userID;
     }
 
-    public void setId(Integer userID) {
+    public void setUserID(Integer userID) {
         this.userID = userID;
     }
 
-    public String getfirstName() {
-        return firstName;
-    }
-    
-    public String getlastName() {
-        return lastName;
+    public String getUserUserName() {
+        return userUserName;
     }
 
-    public void setfirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    
-    public void setlastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserUserName(String userUserName) {
+        this.userUserName = userUserName;
     }
 
-    public String getMail() {
-        return mail;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserFirstName() {
+        return userFirstName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserFirstName(String userFirstName) {
+        this.userFirstName = userFirstName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserLastName() {
+        return userLastName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserLastName(String userLastName) {
+        this.userLastName = userLastName;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserPhone() {
+        return userPhone;
+    }
+
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
+    }
+
+    public Boolean getUserTutor() {
+        return userTutor;
+    }
+
+    public void setUserTutor(Boolean userTutor) {
+        this.userTutor = userTutor;
+    }
+
+    public Tutor getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override

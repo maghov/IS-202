@@ -5,9 +5,7 @@
  */
 package ejb.server;
 
-import EntityClasses.Module;
 import EntityClasses.Users;
-import com.sun.media.jfxmedia.logging.Logger;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -18,6 +16,7 @@ import javax.persistence.TypedQuery;
  *
  * @author Mohammad
  */
+
 @Stateless
 public class UserSessionBean implements UserSessionBeanRemote {
 
@@ -34,8 +33,8 @@ public class UserSessionBean implements UserSessionBeanRemote {
     public boolean login(String username, String password) 
     {
         TypedQuery<Users> query = em.createNamedQuery("Users.login", Users.class); 
-        query.setParameter("userName", username);
-        query.setParameter("password", password);
+        query.setParameter("userUserName", username);
+        query.setParameter("userPassword", password);
         
         try 
         {
@@ -58,8 +57,8 @@ public class UserSessionBean implements UserSessionBeanRemote {
     public boolean checkUserNameOrMail(String username, String mail)
     {
         TypedQuery<Users> query = em.createNamedQuery("Users.findByUserNameOrMail", Users.class); 
-        query.setParameter("userName", username);
-        query.setParameter("mail", mail); 
+        query.setParameter("userUserName", username);
+        query.setParameter("userEmail", mail); 
         
         try 
         {
@@ -77,18 +76,19 @@ public class UserSessionBean implements UserSessionBeanRemote {
     }
     
     @Override
-    public boolean register(String username, String password, String firstName, String lastName, String mail)
+    public boolean register(String username, String password, String firstName, String lastName, String mail, String Phone)
     {
         System.out.println(this.checkUserNameOrMail(username, mail));
         if(this.checkUserNameOrMail(username, mail))
             return false;
         
         Users user = new Users(); 
-        user.setfirstName(firstName);
-        user.setlastName(lastName);
-        user.setUserName(username);
-        user.setPassword(password);
-        user.setMail(mail);
+        user.setUserFirstName(firstName);
+        user.setUserLastName(lastName);
+        user.setUserUserName(username);
+        user.setUserPassword(password);
+        user.setUserEmail(mail);
+        user.setUserPhone(Phone);
         
         try 
         {

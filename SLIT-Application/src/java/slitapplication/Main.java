@@ -16,8 +16,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafxprototype.JavaFXPrototype;
+import SLIT.main;
 import javax.ejb.EJB;
+import static javafx.application.Application.launch;
 
 /**
  *
@@ -50,7 +51,7 @@ public class Main{
             System.out.println("Feil passord eller brukernavn");
         }
         
-        if(userManager.register("Magnus", "Test123", "Magnus", "Høvik", "test@outlook.com"))
+        if(userManager.register("Magnus", "Test123", "Magnus", "Høvik", "test@outlook.com", "12345678"))
         {
             System.out.println("GRATULERER ! DU HAR HERVED blitt med i klubben vår :D "); 
         }

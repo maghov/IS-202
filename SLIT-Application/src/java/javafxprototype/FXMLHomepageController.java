@@ -7,9 +7,7 @@ package javafxprototype;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -18,12 +16,13 @@ import javafx.scene.control.Button;
  */
 public class FXMLHomepageController implements Initializable {
 
-    @FXML
-    private Button modul1Button;
-    
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.modul1Button.setText("Test1");
-    }   
+        // TODO
+    }    
     
 }
