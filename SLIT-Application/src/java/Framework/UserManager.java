@@ -34,8 +34,8 @@ public class UserManager {
         return this.lookupUserSessionBeanRemote().login(username, password);
     }
     
-    public boolean register(String username, String password, String firstName, String lastName, String mail) 
+    public boolean register(String username, String password, String firstName, String lastName, String mail, String Phone) 
     {
-        return this.lookupUserSessionBeanRemote().register(username, password, firstName, lastName, mail);
+        return this.lookupUserSessionBeanRemote().register(username, password, firstName, lastName, mail, Phone);
     }
 }
