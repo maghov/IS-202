@@ -50,7 +50,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button layoutX="1.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="63.0" text="Tilbake" />
+      <Button layoutX="1.0" mnemonicParsing="false" onAction="#handleBackTask" prefHeight="16.0" prefWidth="63.0" text="Tilbake" />
       <MenuBar layoutX="66.0" layoutY="-1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="3.0" prefWidth="737.0">
          <menus>
             <Menu mnemonicParsing="false" text="Logg ut" />

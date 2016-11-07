@@ -21,7 +21,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button mnemonicParsing="false" prefHeight="16.0" prefWidth="63.0" text="Tilbake" />
+      <Button mnemonicParsing="false" onAction="#handleBackTask" prefHeight="16.0" prefWidth="63.0" text="Tilbake" />
       <MenuBar layoutX="63.0" layoutY="-1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="539.0">
          <menus>
             <Menu mnemonicParsing="false" text="Hjelp" />

@@ -72,8 +72,18 @@ public class FXMLRegisterPageController implements Initializable {
             this.logRegistrerLabel.setText("Username or password is incorrect");
         }
         
-        
+    }
 
+    @FXML
+    private void handleBackTask(ActionEvent event) throws IOException {
+        
+        Parent LoginPage_page_parent = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
+        Scene LoginPage_page_scene = new Scene(LoginPage_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(LoginPage_page_scene);
+        app_stage.show();
+        
+        
     }
     
 }
