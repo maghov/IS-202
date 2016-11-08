@@ -14,4 +14,6 @@ import javax.ejb.Remote;
 @Remote
 public interface FeedbackSessionBeanRemote {
     
+    boolean getFeedbackApproved(boolean feedbackApproved);
+    
 }

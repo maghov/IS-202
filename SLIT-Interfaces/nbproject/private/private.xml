@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/magnushovik/NetBeansProjects/IS-202/SLIT-Interfaces/src/ejb/server/UserSessionBeanRemote.java</file>
-            <file>file:/Users/magnushovik/NetBeansProjects/IS-202/SLIT-Interfaces/src/ejb/server/ModuleSessionBeanRemote.java</file>
-            <file>file:/Users/magnushovik/NetBeansProjects/IS-202/SLIT-Interfaces/src/ejb/server/DeliverySessionBeanRemote.java</file>
+            <file>file:/Users/Mohammad/Documents/IS-202/SLIT-Interfaces/src/ejb/server/FeedbackSessionBeanRemote.java</file>
+            <file>file:/Users/Mohammad/Documents/IS-202/SLIT-Interfaces/src/ejb/server/ModuleSessionBeanRemote.java</file>
+            <file>file:/Users/Mohammad/Documents/IS-202/SLIT-Interfaces/src/ejb/server/UserSessionBeanRemote.java</file>
+            <file>file:/Users/Mohammad/Documents/IS-202/SLIT-Interfaces/src/ejb/server/DeliverySessionBeanRemote.java</file>
         </group>
     </open-files>
 </project-private>

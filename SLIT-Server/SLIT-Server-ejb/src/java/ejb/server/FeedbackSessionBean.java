@@ -5,7 +5,11 @@
  */
 package ejb.server;
 
+import EntityClasses.Feedback;
+import EntityClasses.Module;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -14,6 +18,15 @@ import javax.ejb.Stateless;
 @Stateless
 public class FeedbackSessionBean implements FeedbackSessionBeanRemote {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @PersistenceContext(unitName = "SLIT-Server-ejbPU")
+    private EntityManager em;
+    
+    
+    @Override
+    public boolean getFeedbackApproved(boolean feedbackApproved) {
+        return em.find(Feedback.class, feedbackApproved).getFeedbackApproved();
+    }
+    
+    
+    
 }

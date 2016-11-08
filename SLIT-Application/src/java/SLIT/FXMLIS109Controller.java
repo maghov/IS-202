@@ -86,7 +86,6 @@ public class FXMLIS109Controller implements Initializable {
         this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
         this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
-        
         Paint green = null;
         this.test.setFill(green);
 
