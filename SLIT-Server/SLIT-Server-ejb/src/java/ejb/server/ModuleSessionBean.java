@@ -27,7 +27,12 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
     
     @Override
     public String getModuleNameByInt(int moduleID) {
-        return em.find(Module.class, moduleID).getModuleName(); 
+        return em.find(Module.class, moduleID).getModuleName();
+    }
+    
+    @Override
+    public String getModuleTaskByInt(int moduleID) {
+        return em.find(Module.class, moduleID).getModuleTask();
     }
     
     @Override 

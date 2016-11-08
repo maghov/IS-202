@@ -5,6 +5,8 @@
  */
 package SLIT;
 
+import java.util.List;
+import javax.ejb.Remote;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +18,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.stage.Stage;
+import Framework.ModuleManager;
 
 /**
  * FXML Controller class
@@ -24,9 +29,20 @@ import javafx.stage.Stage;
  * @author Mohammad
  */
 public class FXMLIS109Controller implements Initializable {
+
+    @FXML
+    private Tab Module1;
+    @FXML
+    private Label showModule1Name;
+    @FXML
+    private Label showModule1Task;
+    
+    private ModuleManager moduleManager = new ModuleManager();
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)  {
+        this.showModule1Name.setText(this.moduleManager.getModuleById(1));
+        this.showModule1Task.setText(this.moduleManager.getModuleTaskById(1));
     }   
     
     @FXML
@@ -38,8 +54,10 @@ public class FXMLIS109Controller implements Initializable {
             app_stage.setScene(VelgFag_page_scene);
             app_stage.show();
         
-        
     }
+    
+   
+    
     
 }
     

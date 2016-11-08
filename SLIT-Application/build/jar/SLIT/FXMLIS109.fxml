@@ -23,9 +23,13 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Modul 1">
+          <Tab fx:id="Module1" text="Modul 1">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="showModule1Name" layoutX="129.0" layoutY="73.0" prefHeight="221.0" prefWidth="266.0" />
+                        <Label fx:id="showModule1Task" layoutX="435.0" layoutY="83.0" prefHeight="221.0" prefWidth="266.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Modul 2">

@@ -34,6 +34,12 @@ public class ModuleManager {
         return this.lookupModuleSessionBeanRemote().getModuleNameByInt(moduleID);
     }
     
+    public String getModuleTaskById(int moduleID)
+    {
+        return this.lookupModuleSessionBeanRemote().getModuleTaskByInt(moduleID);
+    }
+    
+    
     public List<String> getAllModules()
     {
         return this.lookupModuleSessionBeanRemote().getAllModules(); 
