@@ -6,6 +6,7 @@
 package Framework;
 
 import ejb.server.ModuleSessionBeanRemote;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,7 +46,10 @@ public class ModuleManager {
         return this.lookupModuleSessionBeanRemote().getModuleResourcesByInt(moduleID);
     }
     
- 
+    /*public Date getModuleDeadlineByInt(int moduleID) 
+    {
+        return this.lookupModuleSessionBeanRemote().getModuleDeadlineByInt(moduleID);
+    }*/
 
     public List<String> getAllModules()
     {

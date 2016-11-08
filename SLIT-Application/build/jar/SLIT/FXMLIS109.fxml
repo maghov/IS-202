@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -33,6 +35,11 @@
                         <Label layoutX="41.0" layoutY="60.0" text="Modul" />
                         <Label layoutX="41.0" layoutY="100.0" text="Oppgave" />
                         <Label layoutX="43.0" layoutY="134.0" text="Ressurs" />
+                        <Label layoutX="43.0" layoutY="167.0" text="Frist" />
+                        <Label fx:id="showModuleFrist" layoutX="108.0" layoutY="167.0" text="Modulefrist" />
+                        <Label layoutX="40.0" layoutY="206.0" text="Label" />
+                        <Label layoutX="108.0" layoutY="206.0" text="Label" />
+                        <Circle fx:id="test" fill="#1f93ff" layoutX="213.0" layoutY="69.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: grey; -fx-fill: green;" />
                      </children></AnchorPane>
             </content>
           </Tab>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -28,15 +30,20 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" text="ModuleName" />
-                        <Label fx:id="showModule1Task" layoutX="108.0" layoutY="100.0" text="ModuleTask" />
-                        <Label fx:id="showModule1Resources" layoutX="97.0" layoutY="134.0" text="ModuleResources" />
+                        <Label fx:id="showModule1Task" layoutX="92.0" layoutY="193.0" prefHeight="129.0" prefWidth="121.0" text="ModuleTask" />
+                        <Label fx:id="showModule1Resources" layoutX="98.0" layoutY="185.0" text="ModuleResources" wrapText="true" />
                         <Label layoutX="41.0" layoutY="60.0" text="Modul" />
                         <Label layoutX="41.0" layoutY="100.0" text="Oppgave" />
-                        <Label layoutX="43.0" layoutY="134.0" text="Ressurs" />
+                        <Label layoutX="36.0" layoutY="185.0" text="Ressurs" />
+                        <Label layoutX="43.0" layoutY="249.0" text="Frist" />
+                        <Label fx:id="showModuleFrist" layoutX="107.0" layoutY="100.0" text="Modulefrist" />
+                        <Label layoutX="40.0" layoutY="343.0" text="Label" />
+                        <Label layoutX="107.0" layoutY="343.0" text="Label" />
+                        <Circle fx:id="test" fill="#1f93ff" layoutX="57.0" layoutY="33.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: grey; -fx-fill: green;" />
                      </children></AnchorPane>
             </content>
           </Tab>
-            <Tab fx:id="Module2" text="Modul2">
+            <Tab fx:id="Module2" onSelectionChanged="#handleModule2Task" text="Modul2">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

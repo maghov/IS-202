@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+
 /**
  *
  * @author Mohammad
@@ -42,7 +43,13 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         return em.find(Module.class, moduleID).getModuleResources();
     }
     
-  
+    
+    //@Override
+    //public Date getModuleDeadlineByInt(int moduleID) {
+     //   return em.find(Module.class, moduleID).getModuleDeadline();
+    //}
+    
+
     
     @Override 
     public List<String> getAllModules() 
