@@ -27,12 +27,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
+<<<<<<< Updated upstream
                         <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" text="ModuleName" />
                         <Label fx:id="showModule1Task" layoutX="108.0" layoutY="100.0" text="ModuleTask" />
                         <Label fx:id="showModule1Resources" layoutX="97.0" layoutY="134.0" text="ModuleResources" />
                         <Label layoutX="41.0" layoutY="60.0" text="Modul" />
                         <Label layoutX="41.0" layoutY="100.0" text="Oppgave" />
                         <Label layoutX="43.0" layoutY="134.0" text="Ressurs" />
+=======
+                        <Label fx:id="showModule1Name" layoutX="129.0" layoutY="73.0" prefHeight="221.0" prefWidth="266.0" wrapText="true" />
+                        <Label fx:id="showModule1Task" layoutX="435.0" layoutY="83.0" prefHeight="221.0" prefWidth="266.0" wrapText="true" />
+>>>>>>> Stashed changes
                      </children></AnchorPane>
             </content>
           </Tab>
