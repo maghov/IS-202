@@ -25,7 +25,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="Module1" text="Modul1">
+          <Tab fx:id="Module1" onSelectionChanged="#handleModule1Task" text="Modul1">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

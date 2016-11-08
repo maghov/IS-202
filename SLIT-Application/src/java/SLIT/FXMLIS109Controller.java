@@ -17,7 +17,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import Framework.ModuleManager;
+<<<<<<< HEAD
 import static java.awt.Color.red;
+=======
+>>>>>>> origin/develop
 import javafx.event.Event;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -58,6 +61,7 @@ public class FXMLIS109Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
         
         Paint green = null;
         this.test.setFill(green);
@@ -65,6 +69,12 @@ public class FXMLIS109Controller implements Initializable {
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
         this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
         //this.showModuleFrist.setText(this.moduleManager.getModuleDeadlineByInt(1));
+=======
+        //this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
+        //this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+  
+    
+>>>>>>> origin/develop
 }
  
     
@@ -78,8 +88,15 @@ public class FXMLIS109Controller implements Initializable {
     }   
 
     @FXML
+<<<<<<< HEAD
     private void handleModule2Task(Event event) {
         this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
         this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+=======
+    private void handleModule1Task(Event event) {
+        this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
+        this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
+        this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
+>>>>>>> origin/develop
     }
 }
