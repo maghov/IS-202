@@ -15,11 +15,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import Framework.ModuleManager;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+
 
 /**
  * FXML Controller class
@@ -28,36 +28,41 @@ import javafx.scene.control.Tab;
  */
 public class FXMLIS109Controller implements Initializable {
 
-     @FXML
+    @FXML
+    private Tab Module1;
+    @FXML
+    private Label showModule1Name;
+    @FXML
+    private Label showModule1Task;
+       
+    @FXML
     private Tab Module2;
     @FXML
-    private Label showModule2Task;
-    @FXML
     private Label showModule2Name;
-    
-    private final ModuleManager moduleManager = new ModuleManager();
+    @FXML
+    private Label showModule2Task;
    
+    private final ModuleManager moduleManager = new ModuleManager();
+    @FXML
+    private Label showModule1Resources;
 
-    
-    
-    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
         this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
-    }   
-    
-    @FXML
-    private void handleBackTask(ActionEvent event) throws IOException {
-        
-        Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
-        Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(VelgFag_page_scene);
-        app_stage.show();
-        
-        
-    }
+        this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
+        this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
+        this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
     
 }
-    
+
+    @FXML
+    private void handleBackTask(ActionEvent event)throws IOException {
+        Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
+           Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
+           Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           app_stage.setScene(VelgFag_page_scene);
+            app_stage.show();
+    }   
+}

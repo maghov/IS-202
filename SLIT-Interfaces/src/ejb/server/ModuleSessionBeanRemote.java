@@ -17,9 +17,11 @@ public interface ModuleSessionBeanRemote {
 
     String getModuleNameByInt(int moduleID);
     
-    
+
     String getModuleTaskByInt(int moduleID);
     
+    String getModuleResourcesByInt(int moduleID);
+            
      List<String> getAllModules();
 }
 

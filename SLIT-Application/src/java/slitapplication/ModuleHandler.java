@@ -31,6 +31,7 @@ public class ModuleHandler {
     {
         this.lookupModuleSessionBeanRemote().getModuleNameByInt(1);
         this.lookupModuleSessionBeanRemote().getModuleTaskByInt(1);
+        this.lookupModuleSessionBeanRemote().getModuleResourcesByInt(1);
         
     }
     
