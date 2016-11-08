@@ -61,6 +61,7 @@ public class FXMLIS109Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         
         Paint green = null;
@@ -72,6 +73,10 @@ public class FXMLIS109Controller implements Initializable {
 =======
         //this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
         //this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+=======
+        this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
+        this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+>>>>>>> Stashed changes
   
     
 >>>>>>> origin/develop
@@ -84,7 +89,7 @@ public class FXMLIS109Controller implements Initializable {
            Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
            app_stage.setScene(VelgFag_page_scene);
-            app_stage.show();
+           app_stage.show();
     }   
 
     @FXML
