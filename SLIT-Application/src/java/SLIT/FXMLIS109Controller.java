@@ -60,20 +60,7 @@ public class FXMLIS109Controller implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         
-        Paint green = null;
-        this.test.setFill(green);
-        this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
-        this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
-        this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
-        //this.showModuleFrist.setText(this.moduleManager.getModuleDeadlineByInt(1));
-
-        //this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
-        //this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
-        this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
-        this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
-
-  
-    
+        
 
 }
  
@@ -99,6 +86,9 @@ public class FXMLIS109Controller implements Initializable {
         this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
         this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
+        
+        Paint green = null;
+        this.test.setFill(green);
 
     }
 }
