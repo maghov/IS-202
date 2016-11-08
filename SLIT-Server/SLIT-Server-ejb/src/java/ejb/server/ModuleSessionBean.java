@@ -6,7 +6,9 @@
 package ejb.server;
 
 import EntityClasses.Module;
+import EntityClasses.Users;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -30,6 +32,12 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         return em.find(Module.class, moduleID).getModuleName(); 
     }
     
+    @Override
+    public String getModuleTaskByInt(int moduleID) {
+        return em.find(Module.class, moduleID).getModuleTask(); 
+    }
+  
+    
     @Override 
     public List<String> getAllModules() 
     {
@@ -47,12 +55,16 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         return result; 
  
     }
-
+    
+        
+    
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
 
     public void persist(Object object) {
         em.persist(object);
     }
+
+   
     
 }

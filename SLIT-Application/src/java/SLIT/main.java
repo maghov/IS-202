@@ -44,15 +44,14 @@ public class main extends Application {
     public static void main(String[] args) {
         launch(args);
         
-        /*ModuleHandler handler = new ModuleHandler();
+        //ModuleHandler handler = new ModuleHandler();
         
-        handler.getModuleMethod();*/
+        //handler.getModuleMethod();
         
         //moduleSessionBean.getModuleNameByInt(1);
+   
         
-        //UserHandler handler = new UserHandler(); 
-        
-        //System.out.println(handler.getBusinessMethod());
+        //System.out.println();
     }
     
 }

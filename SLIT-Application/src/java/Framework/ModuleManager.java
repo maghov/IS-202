@@ -29,14 +29,19 @@ public class ModuleManager {
         }
     }
     
-    public String getModuleById(int moduleID) 
+    public String getModuleNameByInt(int moduleID) 
     {
         return this.lookupModuleSessionBeanRemote().getModuleNameByInt(moduleID);
     }
     
+     public String getModuleTaskByInt(int moduleID) 
+    {
+        return this.lookupModuleSessionBeanRemote().getModuleTaskByInt(moduleID);
+    }
+     
     public List<String> getAllModules()
     {
         return this.lookupModuleSessionBeanRemote().getAllModules(); 
     }
-   
+  
 }

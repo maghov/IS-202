@@ -17,6 +17,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import Framework.ModuleManager;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 
 /**
  * FXML Controller class
@@ -24,9 +27,24 @@ import javafx.stage.Stage;
  * @author Mohammad
  */
 public class FXMLIS109Controller implements Initializable {
+
+     @FXML
+    private Tab Module2;
+    @FXML
+    private Label showModule2Task;
+    @FXML
+    private Label showModule2Name;
+    
+    private final ModuleManager moduleManager = new ModuleManager();
+   
+
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
+        this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
     }   
     
     @FXML

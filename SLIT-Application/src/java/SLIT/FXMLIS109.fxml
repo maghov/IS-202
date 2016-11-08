@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxprototype.FXMLHomepageController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SLIT.FXMLIS109Controller">
    <children>
       <TabPane layoutY="22.0" prefHeight="515.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -28,9 +28,13 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab text="Modul 2">
+            <Tab fx:id="Module2" text="Modul 2">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="showModule2Task" layoutX="163.0" layoutY="211.0" prefHeight="176.0" prefWidth="271.0" text="ModuleTask" wrapText="true" />
+                        <Label fx:id="showModule2Name" layoutX="170.0" layoutY="30.0" prefHeight="164.0" prefWidth="355.0" text="ModuleName" />
+                     </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="Modul 3">
