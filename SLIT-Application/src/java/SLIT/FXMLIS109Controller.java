@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import Framework.ModuleManager;
+import javafx.event.Event;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 
@@ -49,11 +50,9 @@ public class FXMLIS109Controller implements Initializable {
   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
-        this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
-        this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
-        this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
-        this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
+        //this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
+        //this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+  
     
 }
 
@@ -65,4 +64,11 @@ public class FXMLIS109Controller implements Initializable {
            app_stage.setScene(VelgFag_page_scene);
             app_stage.show();
     }   
+
+    @FXML
+    private void handleModule1Task(Event event) {
+        this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
+        this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
+        this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
+    }
 }
