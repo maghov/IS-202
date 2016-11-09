@@ -77,17 +77,17 @@ public class FXMLIS109Controller implements Initializable {
 
 
 
+    @FXML
     private void handleModule2Task(Event event) {
         this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
         this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
     }
 
+    @FXML
     private void handleModule1Task(Event event) {
         this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
         this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
-        Paint green = null;
-        this.test.setFill(green);
 
     }
 }
