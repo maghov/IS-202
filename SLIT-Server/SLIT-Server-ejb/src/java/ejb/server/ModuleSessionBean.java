@@ -5,6 +5,8 @@
  */
 package ejb.server;
 
+import Common.DataModelConverter;
+import DataModel.ModuleDataModel;
 import EntityClasses.Module;
 import EntityClasses.Users;
 import java.util.ArrayList;
@@ -44,10 +46,42 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
     }
     
     
-    //@Override
-    //public Date getModuleDeadlineByInt(int moduleID) {
-     //   return em.find(Module.class, moduleID).getModuleDeadline();
-    //}
+    @Override
+    public Date getModuleDeadlineByInt(int moduleID) {
+        return em.find(Module.class, moduleID).getModuleDeadline();
+    }
+    
+    @Override
+    public ModuleDataModel getModuleById(int moduleID) {
+        
+        ModuleDataModel moduleDataModel = new ModuleDataModel();
+        
+        try 
+        {
+            Module module = em.find(Module.class, moduleID);
+        
+            
+            if (module != null) {
+                
+                moduleDataModel = DataModelConverter.convertModuleEntityToModuleDataModel(module);
+                
+            }
+                
+        
+        }
+        catch(Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        
+        return moduleDataModel;
+      
+        
+        
+    }
+    
+    
     
 
     

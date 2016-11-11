@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import DataModel.ModuleDataModel;
 import ejb.server.ModuleSessionBeanRemote;
 import java.util.Date;
 import java.util.List;
@@ -46,10 +47,15 @@ public class ModuleManager {
         return this.lookupModuleSessionBeanRemote().getModuleResourcesByInt(moduleID);
     }
     
-    /*public Date getModuleDeadlineByInt(int moduleID) 
+    public Date getModuleDeadlineByInt(int moduleID) 
     {
         return this.lookupModuleSessionBeanRemote().getModuleDeadlineByInt(moduleID);
-    }*/
+    }
+    
+    public ModuleDataModel getModuleById(int moduleID)
+    {
+        return this.lookupModuleSessionBeanRemote().getModuleById(moduleID);   
+    }
 
     public List<String> getAllModules()
     {

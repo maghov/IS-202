@@ -5,6 +5,7 @@
  */
 package SLIT;
 
+import DataModel.ModuleDataModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import Framework.ModuleManager;
 import static java.awt.Color.red;
+import java.text.DateFormat;
 import javafx.event.Event;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -58,11 +60,8 @@ public class FXMLIS109Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        
-        
-
-}
+    
+    }
  
     
     @FXML
@@ -79,15 +78,36 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule2Task(Event event) {
-        this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
-        this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+        //this.showModule2Task.setText(this.moduleManager.getModuleTaskByInt(2));
+        //this.showModule2Name.setText(this.moduleManager.getModuleNameByInt(2));
+         ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(2);
+        
+        if(moduleDataModel.getModule_ID() != 0)
+        {
+            this.showModule2Name.setText(moduleDataModel.getModule_Name());
+            this.showModule2Task.setText(moduleDataModel.getModule_Task());
+            //this.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline())); 
+        }
+        else
+            this.showModule2Name.setText("This does not work today"); 
     }
 
     @FXML
     private void handleModule1Task(Event event) {
+        
+        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
+        
+        if(moduleDataModel.getModule_ID() != 0)
+        {
+            this.showModule1Name.setText(moduleDataModel.getModule_Name());
+            this.showModule1Resources.setText(moduleDataModel.getModule_Resources());
+            this.showModuleFrist.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline())); 
+        }
+        
+        /*
         this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
         this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
-
+        */
     }
 }
