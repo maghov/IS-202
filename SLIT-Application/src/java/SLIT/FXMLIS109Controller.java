@@ -104,6 +104,8 @@ public class FXMLIS109Controller implements Initializable {
             this.showModuleFrist.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline())); 
         }
         
+        else
+            this.showModule2Name.setText("This does not work today"); 
         /*
         this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));

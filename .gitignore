@@ -10,3 +10,7 @@ SLIT-Server/SLIT-Server-ejb/build/classes/EntityClasses/Users.class
 *.jar
 
 *.properties
+
+*.class
+
+*.class
