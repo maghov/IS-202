@@ -31,4 +31,5 @@ public interface UserSessionBeanRemote {
     
     
     UserDataModel loginUser(String username, String password);
+   
 }

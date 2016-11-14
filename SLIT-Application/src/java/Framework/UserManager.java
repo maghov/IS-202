@@ -44,6 +44,6 @@ public class UserManager {
     {
         return this.lookupUserSessionBeanRemote().loginUser(username, password);
     }
-    
+   
     
 }

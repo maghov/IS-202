@@ -25,14 +25,13 @@ public class FeedbackDataModel {
     
     private Boolean feedback_Approved;
     
-    private int student_user_ID;
+    private UserDataModel student_user_ID;
     
     private int teacher_user_ID;
     
     private int tutor_user_ID;
     
     private int FK_delivery_ID;
-    
 
     public UserDataModel getTeacher_user() {
         return teacher_user;
@@ -82,11 +81,11 @@ public class FeedbackDataModel {
         this.feedback_Approved = feedback_Approved;
     }
 
-    public int getStudent_user_ID() {
+    public UserDataModel getStudent_user_ID() {
         return student_user_ID;
     }
 
-    public void setStudent_user_ID(int student_user_ID) {
+    public void setStudent_user_ID(UserDataModel student_user_ID) {
         this.student_user_ID = student_user_ID;
     }
 
@@ -113,6 +112,9 @@ public class FeedbackDataModel {
     public void setFK_delivery_ID(int FK_delivery_ID) {
         this.FK_delivery_ID = FK_delivery_ID;
     }
+    
+
+   
     
     
 

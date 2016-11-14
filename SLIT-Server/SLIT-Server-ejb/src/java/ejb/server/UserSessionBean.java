@@ -13,6 +13,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import Common.DataModelConverter;
+
+
 
 /**
  *
@@ -135,6 +138,11 @@ public class UserSessionBean implements UserSessionBeanRemote {
         }
         
     }
+   
+        
+      
+        
+  
     
 
     // Add business logic below. (Right-click in editor and choose

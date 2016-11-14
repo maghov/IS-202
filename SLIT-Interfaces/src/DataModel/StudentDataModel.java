@@ -11,8 +11,10 @@ package DataModel;
  */
 public class StudentDataModel implements java.io.Serializable {
     
-    private UserDataModel student_user; 
+    private UserDataModel student_user;
     
+   private TeacherDataModel teacher_user;
+   
     private int fk_UserStudent; 
     
 
