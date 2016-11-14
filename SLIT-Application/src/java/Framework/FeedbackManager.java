@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import DataModel.FeedbackDataModel;
+import DataModel.ModuleDataModel;
 import ejb.server.FeedbackSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,9 +30,10 @@ public class FeedbackManager {
         }
     }
     
-    public boolean getFeedBackApproved(boolean feedbackApproved) 
+    public FeedbackDataModel getFeedbackByID(int feedbackID)
     {
-        return this.lookupFeedbackSessionBeanRemote().getFeedbackApproved(feedbackApproved);
+        return this.lookupFeedbackSessionBeanRemote().getFeedbackByID(feedbackID);
     }
     
+ 
 }

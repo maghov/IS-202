@@ -5,6 +5,7 @@
  */
 package SLIT;
 
+import DataModel.UserDataModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -37,6 +38,8 @@ public class FXMLLoginPageController implements Initializable {
     
     private UserManager userManager = new UserManager();
     
+    public static UserDataModel user;
+    
     @FXML
     private Label logLabel;
    
@@ -54,7 +57,28 @@ public class FXMLLoginPageController implements Initializable {
     @FXML
     public void handleButtonEvent(ActionEvent event) throws IOException {
         
-        if(this.userManager.login(this.userNameTextField.getText(), this.passwordTextField.getText()))
+        user = this.userManager.loginUser(this.userNameTextField.getText(), this.passwordTextField.getText());
+        
+        if (user.getUser_UserName() != null) {
+            
+            logLabel.setText("Login successfull");
+            
+            System.out.println("Test!");
+            Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
+            Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(VelgFag_page_scene);
+            app_stage.show();  
+        }
+        else 
+        {
+            this.logLabel.setText("Username or password is incorrect");
+        }
+
+        
+        
+        
+        /*if(this.userManager.login(this.userNameTextField.getText(), this.passwordTextField.getText()))
         {
             logLabel.setText("Login successfull");
             
@@ -68,8 +92,8 @@ public class FXMLLoginPageController implements Initializable {
         else 
         {
             this.logLabel.setText("Username or password is incorrect");
-        }
-      }
+        }*/
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

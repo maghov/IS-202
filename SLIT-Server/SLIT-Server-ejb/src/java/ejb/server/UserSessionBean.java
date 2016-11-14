@@ -5,12 +5,17 @@
  */
 package ejb.server;
 
+import Common.DataModelConverter;
+import DataModel.UserDataModel;
 import EntityClasses.Users;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import Common.DataModelConverter;
+
+
 
 /**
  *
@@ -76,6 +81,37 @@ public class UserSessionBean implements UserSessionBeanRemote {
     }
     
     @Override
+    public UserDataModel loginUser(String username, String password) {
+        
+        UserDataModel user = new UserDataModel();
+        
+        TypedQuery<Users> query = em.createNamedQuery("Users.login", Users.class); 
+        query.setParameter("userUserName", username);
+        query.setParameter("userPassword", password);
+        
+        try 
+        {
+            List<Users> userlist = query.getResultList();
+           
+            if(userlist.size() > 0) {
+                user = DataModelConverter.convertUserEntityToUserDataModel(userlist.get(0));
+                
+                
+            }
+                
+ 
+        } 
+        catch(Exception e) 
+        {
+            e.printStackTrace();
+        }
+
+        return user;
+        
+    }
+            
+    
+    @Override
     public boolean register(String username, String password, String firstName, String lastName, String mail, String Phone)
     {
         System.out.println(this.checkUserNameOrMail(username, mail));
@@ -102,6 +138,11 @@ public class UserSessionBean implements UserSessionBeanRemote {
         }
         
     }
+   
+        
+      
+        
+  
     
 
     // Add business logic below. (Right-click in editor and choose

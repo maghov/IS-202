@@ -4,3 +4,13 @@
 *.html
 
 SLIT-Server/SLIT-Server-ejb/build/classes/EntityClasses/Users.class
+/SLIT-Server/SLIT-Server-ejb/dist/
+*.jar
+
+*.jar
+
+*.properties
+
+*.class
+
+*.class

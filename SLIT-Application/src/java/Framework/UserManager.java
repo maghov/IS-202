@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import DataModel.UserDataModel;
 import ejb.server.UserSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,4 +39,11 @@ public class UserManager {
     {
         return this.lookupUserSessionBeanRemote().register(username, password, firstName, lastName, mail, Phone);
     }
+    
+    public UserDataModel loginUser(String username, String password) 
+    {
+        return this.lookupUserSessionBeanRemote().loginUser(username, password);
+    }
+   
+    
 }
