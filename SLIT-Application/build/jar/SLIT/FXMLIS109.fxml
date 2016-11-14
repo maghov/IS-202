@@ -40,6 +40,8 @@
                         <Label layoutX="40.0" layoutY="343.0" text="Label" />
                         <Label layoutX="107.0" layoutY="343.0" text="Label" />
                         <Circle fx:id="test" fill="#1f93ff" layoutX="57.0" layoutY="33.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: grey; -fx-fill: green;" />
+                        <Label fx:id="showFeedbackApproved" layoutX="400.0" layoutY="52.0" text="Label" />
+                        <Label fx:id="showFeedbackApprovedbyTeacher" layoutX="400.0" layoutY="146.0" text="Label" />
                      </children>
               </AnchorPane>
             </content>

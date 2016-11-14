@@ -6,6 +6,8 @@
 package SLIT;
 
 import DataModel.ModuleDataModel;
+import DataModel.FeedbackDataModel;
+import Framework.FeedbackManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -49,12 +51,19 @@ public class FXMLIS109Controller implements Initializable {
     private Label showModule2Task;
    
     private final ModuleManager moduleManager = new ModuleManager();
+    
+    private final FeedbackManager feedbackManager = new FeedbackManager();
+    
     @FXML
     private Label showModule1Resources;
     @FXML
     private Label showModuleFrist;
     @FXML
     private Circle test;
+    @FXML
+    private Label showFeedbackApproved;
+    @FXML
+    private Label showFeedbackApprovedbyTeacher;
 
     
     
@@ -97,15 +106,22 @@ public class FXMLIS109Controller implements Initializable {
         
         ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
         
+        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackByID(1);
+        
+        
+        
         if(moduleDataModel.getModule_ID() != 0)
         {
             this.showModule1Name.setText(moduleDataModel.getModule_Name());
             this.showModule1Resources.setText(moduleDataModel.getModule_Resources());
             this.showModuleFrist.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline())); 
+            this.showFeedbackApproved.setText(feedbackDataModel.getFeedback_Approved().toString());
+            this.showFeedbackApprovedbyTeacher.setText(feedbackDataModel.getTeacher_user().getUser_FirstName());
+            
         }
         
         else
-            this.showModule2Name.setText("This does not work today"); 
+            System.out.println("lol");
         /*
         this.showModule1Name.setText(this.moduleManager.getModuleNameByInt(1));
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));

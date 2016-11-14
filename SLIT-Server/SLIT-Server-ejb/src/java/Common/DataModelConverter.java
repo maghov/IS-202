@@ -5,10 +5,14 @@
  */
 package Common;
 
+import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
+import DataModel.StudentDataModel;
 import DataModel.TeacherDataModel;
 import DataModel.UserDataModel;
+import EntityClasses.Feedback;
 import EntityClasses.Module;
+import EntityClasses.Student;
 import EntityClasses.Teacher;
 import EntityClasses.Users;
 
@@ -109,6 +113,50 @@ public class DataModelConverter {
         
     }
     
+    public static StudentDataModel convertStudentEntityToStudentDataModel(Student student) {
+        
+        StudentDataModel studentDataModel = new StudentDataModel();
+        
+        studentDataModel.setStudent_user(DataModelConverter.convertUserEntityToUserDataModel(student.getUsers()));
+        
+        return studentDataModel;
     
-    
+    }
+    public static FeedbackDataModel convertFeedbackEntityToFeedbackDataModel(Feedback feedback) {
+        
+        
+        FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
+        
+        
+        feedbackDataModel.setFK_delivery_ID(feedback.getFKdeliveryID().getDeliveryID());
+        
+        feedbackDataModel.setFeedback_Approved(feedback.getFeedbackApproved());
+        
+        feedbackDataModel.setFeedback_Comment(feedback.getFeedbackComment());
+        
+        feedbackDataModel.setFeedback_Date(feedback.getFeedbackDate());
+        
+        feedbackDataModel.setFeedback_HiddenComment(feedback.getFeedbackHiddenComment());
+        
+        feedbackDataModel.setFeedback_ID(feedback.getFeedbackID());
+        
+        TeacherDataModel teacherDataModel = new TeacherDataModel();
+        
+        Users user = teacher.getUsers();
+        
+        UserDataModel userDataModel = new UserDataModel();
+        
+        userDataModel = convertUserEntityToUserDataModel(user);
+        
+        teacherDataModel.setTeacher_user(userDataModel);
+        
+        
+        return feedbackDataModel;
+              
+        
+    }
 }
+    
+    
+    
+   

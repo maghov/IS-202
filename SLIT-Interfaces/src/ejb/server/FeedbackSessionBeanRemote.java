@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package ejb.server;
-
 import javax.ejb.Remote;
+import DataModel.FeedbackDataModel;
+
 
 /**
  *
@@ -14,6 +15,6 @@ import javax.ejb.Remote;
 @Remote
 public interface FeedbackSessionBeanRemote {
     
-    boolean getFeedbackApproved(boolean feedbackApproved);
+    FeedbackDataModel getFeedbackByID(int feedbackID);
     
 }
