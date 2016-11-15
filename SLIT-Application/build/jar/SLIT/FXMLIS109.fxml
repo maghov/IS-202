@@ -29,19 +29,21 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" text="ModuleName" />
-                        <Label fx:id="showModule1Task" layoutX="110.0" layoutY="44.0" prefHeight="129.0" prefWidth="121.0" text="ModuleTask" />
-                        <Label fx:id="showModule1Resources" layoutX="98.0" layoutY="185.0" text="ModuleResources" wrapText="true" />
-                        <Label layoutX="41.0" layoutY="60.0" text="Modul" />
-                        <Label layoutX="41.0" layoutY="100.0" text="Oppgave" />
-                        <Label layoutX="36.0" layoutY="185.0" text="Ressurs" />
-                        <Label layoutX="43.0" layoutY="249.0" text="Frist" />
+                        <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" prefHeight="17.0" prefWidth="233.0" text="ModuleName" />
+                        <Label fx:id="showModule1Task" layoutX="322.0" layoutY="77.0" prefHeight="121.0" prefWidth="249.0" text="ModuleTask" />
+                        <Label fx:id="showModule1Resources" layoutX="86.0" layoutY="197.0" prefHeight="37.0" prefWidth="272.0" text="ModuleResources" wrapText="true" />
+                        <Label layoutX="26.0" layoutY="60.0" text="Modul" />
+                        <Label layoutX="246.0" layoutY="129.0" text="Oppgave" />
+                        <Label layoutX="19.0" layoutY="207.0" text="Ressurs" />
+                        <Label layoutX="24.0" layoutY="249.0" text="Frist" />
                         <Label fx:id="showModuleFrist" layoutX="89.0" layoutY="249.0" text="Modulefrist" />
-                        <Label layoutX="40.0" layoutY="343.0" text="Label" />
-                        <Label layoutX="107.0" layoutY="343.0" text="Label" />
-                        <Circle fx:id="test" fill="#1f93ff" layoutX="57.0" layoutY="33.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: grey; -fx-fill: green;" />
-                        <Label fx:id="showFeedbackApproved" layoutX="400.0" layoutY="52.0" text="Label" />
-                        <Label fx:id="showFeedbackApprovedbyTeacher" layoutX="400.0" layoutY="146.0" text="Label" />
+                        <Label fx:id="Aim" layoutX="27.0" layoutY="294.0" text="Mål" />
+                        <Label fx:id="showModule1Aim" layoutX="89.0" layoutY="275.0" prefHeight="62.0" prefWidth="235.0" text="Aim" wrapText="true" />
+                        <Circle fx:id="test" fill="#1f93ff" layoutX="57.0" layoutY="33.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: grey; -fx-fill: red; -fx-fill: grey;" />
+                        <Label fx:id="showFeedbackApproved" layoutX="611.0" layoutY="25.0" text="Label" />
+                        <Label fx:id="showFeedbackApprovedbyTeacher" layoutX="611.0" layoutY="52.0" text="Label" />
+                        <Label layoutX="24.0" layoutY="347.0" text="Obligatorisk" />
+                        <Label fx:id="showModule1Obligatory" layoutX="114.0" layoutY="347.0" text="Obligatory" />
                      </children>
               </AnchorPane>
             </content>
@@ -50,14 +52,22 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="showModule2Task" layoutX="163.0" layoutY="211.0" prefHeight="176.0" prefWidth="271.0" text="ModuleTask" wrapText="true" />
-                        <Label fx:id="showModule2Name" layoutX="153.0" layoutY="37.0" prefHeight="164.0" prefWidth="355.0" text="ModuleName" />
+                        <Label fx:id="showModule2Task" layoutX="14.0" layoutY="65.0" prefHeight="176.0" prefWidth="271.0" text="ModuleTask" wrapText="true" />
+                        <Label fx:id="showModule2Name" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="355.0" text="ModuleName" />
+                        <Label layoutX="14.0" layoutY="313.0" prefHeight="27.0" prefWidth="78.0" text="ModuleAim" wrapText="true" />
+                        <Label fx:id="showModule2Aim" layoutX="112.0" layoutY="272.0" prefHeight="109.0" prefWidth="226.0" text="Label" />
+                        <Circle fx:id="circleApproved" fill="DODGERBLUE" layoutX="629.0" layoutY="44.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
                      </children></AnchorPane>
                </content>
             </Tab>
-            <Tab text="Modul 3">
+            <Tab fx:id="Module3" onSelectionChanged="#handleModule3Task" text="Modul 3">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Circle fx:id="circlemodule3" fill="#ff1f1f" layoutX="302.0" layoutY="60.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="31.0" layoutY="51.0" text="Er den godkjen?t" />
+                        <Label fx:id="showTrueOrFalseModule3" layoutX="159.0" layoutY="51.0" text="TrueOrFalse" />
+                     </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="Modul 4">

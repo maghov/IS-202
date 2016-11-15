@@ -5,9 +5,8 @@
  */
 package SLIT;
 
-import DataModel.ModuleDataModel;
 import DataModel.FeedbackDataModel;
-import DataModel.UserDataModel;
+import DataModel.ModuleDataModel;
 import Framework.ModuleManager;
 import Framework.FeedbackManager;
 import Framework.UserManager;
@@ -26,6 +25,7 @@ import java.text.DateFormat;
 import javafx.event.Event;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 import javafx.scene.shape.Circle;
@@ -44,7 +44,6 @@ public class FXMLIS109Controller implements Initializable {
     private Label showModule1Name;
     @FXML
     private Label showModule1Task;
-       
     @FXML
     private Tab Module2;
     @FXML
@@ -78,12 +77,23 @@ public class FXMLIS109Controller implements Initializable {
     private Label showModule2Aim;
     private Paint blue;
     private Paint red;
+    @FXML
+    private Tab Module3;
+    @FXML
+    private Circle circlemodule3;
+    @FXML
+    private Circle circleApproved;
+    @FXML
+    private Label showTrueOrFalseModule3;
 
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+   
     }
+    
+    
  
     
     @FXML
@@ -98,7 +108,10 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private void handleModule2Task(Event event) {
          ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(2);
-        
+        if(moduleDataModel.getModule_Obligatory() == true)
+        {
+            this.circleApproved.setFill(Color.GREEN);
+        }
         if(moduleDataModel.getModule_ID() != 0)
         {
             this.showModule2Name.setText(moduleDataModel.getModule_Name());
@@ -115,18 +128,18 @@ public class FXMLIS109Controller implements Initializable {
     private void handleModule1Task(Event event) {
         
         ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
-        
-  
+         if (moduleDataModel.getModule_Obligatory() == true);
+         {
+             this.test.setFill(Color.GREEN);
+         }
+          
         if(moduleDataModel.getModule_ID() != 0)
         {
             this.showModule1Name.setText(moduleDataModel.getModule_Name());
             this.showModule1Task.setText(moduleDataModel.getModule_Task());
             this.showModule1Resources.setText(moduleDataModel.getModule_Resources());
-            this.showModule1Aim.setText(moduleDataModel.getModule_Aim());
+            this.showModule1Aim.setText(moduleDataModel.getModule_Aim());       
             this.showModuleFrist.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline()));
-            //this.showFeedbackApproved.setText(moduleDataModel.getTeacher_user().getTeacher_user().getUser_FirstName());
-            //this.showFeedbackApproved.setText(feedbackDataModel.getFeedback_Approved().toString());
-     
         }
         else
             System.out.println("lol");
@@ -135,5 +148,35 @@ public class FXMLIS109Controller implements Initializable {
         this.showModule1Task.setText(this.moduleManager.getModuleTaskByInt(1));
         this.showModule1Resources.setText(this.moduleManager.getModuleResourcesByInt(1));
         */
+    }   
+
+    @FXML
+    private void handleModule3Task(Event event) {
+        
+       // ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
+       if (feedbackManager.getFeedbackByID(1) == true)
+       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackByID(1).toString());
+       this.circlemodule3.setFill(Color.GREEN);
+        
+       /* if (moduleDataModel.getModule_ID() == 1 )
+      {
+          this.circlemodule3.setFill(Color.AQUA);
+          System.out.println(moduleDataModel.getModule_ID());
+      }
+      
+       else 
+       {
+           System.out.println("Dette går ikke kompis");
+       } 
+   
+      /*FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackByID(1);
+       if(feedbackDataModel.getFeedback_ID() != 0)
+       {
+            this.circlemodule3.setFill(Color.GREEN);
+            
+       }*/ 
+       
+
     }
+
 }

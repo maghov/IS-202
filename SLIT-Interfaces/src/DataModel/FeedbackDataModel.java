@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class FeedbackDataModel {
     
-    private UserDataModel teacher_user;
+    private TeacherDataModel teacher_user;
     
     private int feedback_ID;
     
@@ -23,21 +23,13 @@ public class FeedbackDataModel {
     
     private Date feedback_Date;
     
-    private Boolean feedback_Approved;
-    
-    private UserDataModel student_user_ID;
-    
-    private int teacher_user_ID;
-    
-    private int tutor_user_ID;
-    
-    private int FK_delivery_ID;
+    private Boolean feedback_Approved;  
 
-    public UserDataModel getTeacher_user() {
+    public TeacherDataModel getTeacher_user() {
         return teacher_user;
     }
 
-    public void setTeacher_user(UserDataModel teacher_user) {
+    public void setTeacher_user(TeacherDataModel teacher_user) {
         this.teacher_user = teacher_user;
     }
 
@@ -81,47 +73,6 @@ public class FeedbackDataModel {
         this.feedback_Approved = feedback_Approved;
     }
 
-    public UserDataModel getStudent_user_ID() {
-        return student_user_ID;
-    }
 
-    public void setStudent_user_ID(UserDataModel student_user_ID) {
-        this.student_user_ID = student_user_ID;
-    }
-
-    public int getTeacher_user_ID() {
-        return teacher_user_ID;
-    }
-
-    public void setTeacher_user_ID(int teacher_user_ID) {
-        this.teacher_user_ID = teacher_user_ID;
-    }
-
-    public int getTutor_user_ID() {
-        return tutor_user_ID;
-    }
-
-    public void setTutor_user_ID(int tutor_user_ID) {
-        this.tutor_user_ID = tutor_user_ID;
-    }
-
-    public int getFK_delivery_ID() {
-        return FK_delivery_ID;
-    }
-
-    public void setFK_delivery_ID(int FK_delivery_ID) {
-        this.FK_delivery_ID = FK_delivery_ID;
-    }
-    
-
-   
-    
-    
-
-    
-
-   
-    
-    
     
 }
