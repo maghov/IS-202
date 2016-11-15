@@ -154,10 +154,14 @@ public class FXMLIS109Controller implements Initializable {
     private void handleModule3Task(Event event) {
         
        // ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
-       if (feedbackManager.getFeedbackByID(1) == true)
-       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackByID(1).toString());
+       if (feedbackManager.getFeedbackApprovedByInt(2) == true) {
+       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackApprovedByInt(2).toString());
        this.circlemodule3.setFill(Color.GREEN);
-        
+       }
+       else {
+           System.out.println("model ikke godkjent");
+       }
+           
        /* if (moduleDataModel.getModule_ID() == 1 )
       {
           this.circlemodule3.setFill(Color.AQUA);

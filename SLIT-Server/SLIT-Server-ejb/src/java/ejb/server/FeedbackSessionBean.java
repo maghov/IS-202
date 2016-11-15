@@ -22,7 +22,7 @@ public class FeedbackSessionBean implements FeedbackSessionBeanRemote {
 
     @PersistenceContext(unitName = "SLIT-Server-ejbPU")
     private EntityManager em;
-
+    
     @Override
     public Boolean getFeedbackApprovedByInt(int feedbackID) {
         return em.find(Feedback.class, feedbackID).getFeedbackApproved();
