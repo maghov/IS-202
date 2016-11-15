@@ -28,8 +28,6 @@ public class ModuleDataModel implements java.io.Serializable {
     private Boolean module_Obligatory;
     
     private TeacherDataModel teacher_user;
-    
-    
 
     public int getModule_ID() {
         return module_ID;
@@ -79,11 +77,11 @@ public class ModuleDataModel implements java.io.Serializable {
         this.module_Deadline = module_Deadline;
     }
 
-    public boolean getModule_Obligatory() {
+    public Boolean getModule_Obligatory() {
         return module_Obligatory;
     }
 
-    public void setModule_Obligatory(boolean module_Obligatory) {
+    public void setModule_Obligatory(Boolean module_Obligatory) {
         this.module_Obligatory = module_Obligatory;
     }
 
@@ -94,9 +92,9 @@ public class ModuleDataModel implements java.io.Serializable {
     public void setTeacher_user(TeacherDataModel teacher_user) {
         this.teacher_user = teacher_user;
     }
+    
+    
 
-    
-    
     
     
 }
