@@ -25,7 +25,7 @@ public class ModuleDataModel implements java.io.Serializable {
     
     private Date module_Deadline;
     
-    private boolean module_Obligatory;
+    private Boolean module_Obligatory;
     
     private TeacherDataModel teacher_user;
     
@@ -79,7 +79,7 @@ public class ModuleDataModel implements java.io.Serializable {
         this.module_Deadline = module_Deadline;
     }
 
-    public boolean isModule_Obligatory() {
+    public boolean getModule_Obligatory() {
         return module_Obligatory;
     }
 

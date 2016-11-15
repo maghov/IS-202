@@ -14,6 +14,6 @@ import DataModel.FeedbackDataModel;
  */
 @Remote
 public interface FeedbackSessionBeanRemote {
-    
-    FeedbackDataModel getFeedbackByID(int feedbackID);
+   
+   Boolean getFeedbackApprovedByInt(int feedbackID);
 }

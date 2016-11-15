@@ -8,6 +8,7 @@ package ejb.server;
 import Common.DataModelConverter;
 import DataModel.FeedbackDataModel;
 import EntityClasses.Feedback;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,38 +22,10 @@ public class FeedbackSessionBean implements FeedbackSessionBeanRemote {
 
     @PersistenceContext(unitName = "SLIT-Server-ejbPU")
     private EntityManager em;
-    
-    
+
     @Override
-    public FeedbackDataModel getFeedbackByID(int feedbackID) {
-            
-    FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
-    
-    try 
-        {
-            Feedback feedback = em.find(Feedback.class, feedbackID);
-        
-            
-            if (feedback != null) {
-                
-                feedbackDataModel = DataModelConverter.convertFeedbackEntityToFeedbackDataModel(feedback);
-                
-            }
-                
-        
-        }
-        catch(Exception e) 
-        {
-            e.printStackTrace();
-        }
-        
-        
-        return feedbackDataModel;
-      
-        
-        
+    public Boolean getFeedbackApprovedByInt(int feedbackID) {
+        return em.find(Feedback.class, feedbackID).getFeedbackApproved();
     }
-    
-    
-    
+
 }

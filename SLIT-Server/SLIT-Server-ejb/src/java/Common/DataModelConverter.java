@@ -127,8 +127,6 @@ public class DataModelConverter {
         
         FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
         
-        feedbackDataModel.setFK_delivery_ID(feedback.getFKdeliveryID().getDeliveryID());
-        
         feedbackDataModel.setFeedback_Approved(feedback.getFeedbackApproved());
         
         feedbackDataModel.setFeedback_Comment(feedback.getFeedbackComment());
@@ -138,7 +136,7 @@ public class DataModelConverter {
         feedbackDataModel.setFeedback_HiddenComment(feedback.getFeedbackHiddenComment());
         
         feedbackDataModel.setFeedback_ID(feedback.getFeedbackID());
-       
+        
         //teacherDataModel.setTeacher_user(DataModelConverter.convertUserEntityToUserDataModel(teacher.getUsers()));
         
         return feedbackDataModel;
