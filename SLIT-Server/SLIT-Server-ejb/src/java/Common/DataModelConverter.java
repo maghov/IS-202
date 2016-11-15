@@ -34,6 +34,7 @@ public class DataModelConverter {
         moduleDataModel.setModule_Name(module.getModuleName());
         moduleDataModel.setModule_Obligatory(module.getModuleObligatory());
         moduleDataModel.setModule_Resources(module.getModuleResources());
+        moduleDataModel.setModule_Task(module.getModuleTask());
         
         
         if (module.getTeacheruserID() != null)
