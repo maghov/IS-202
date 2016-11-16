@@ -1,5 +1,4 @@
-
-
+create database slitdb;
 USE slitdb;
 
 ##########################################################
@@ -12,7 +11,7 @@ USE slitdb;
 		user_LastName VARCHAR(64) NOT NULL,
 		user_Email VARCHAR(64) NOT NULL,
 		user_Phone VARCHAR(11),
-        user_Tutor BOOLEAN, #Lærer kan gå inn å sette verdien til true på hjelpelærere.
+        user_tutor BOOLEAN NOT NULL,
 		PRIMARY KEY(user_ID)
 		);
 
@@ -52,7 +51,7 @@ USE slitdb;
 		module_Aim VARCHAR(1000) NOT NULL,
 		module_Deadline DATE NOT NULL,
 		module_Obligatory BOOLEAN NOT NULL,
-        teacher_user_ID INTEGER(4),
+        teacher_user_ID INTEGER(4) NOT NULL,
 		PRIMARY KEY(module_ID),
         CONSTRAINT fk_TeacherModule FOREIGN KEY(teacher_user_ID) REFERENCES Teacher(teacher_user_ID)
 		);
@@ -82,7 +81,7 @@ USE slitdb;
 		#En-til-mange eller en-til-en??
         
         
-	CREATE TABLE Feedback (	#Feedback blir knyttet til en innlevering(delivery)
+	CREATE TABLE Feedback (#Feedback blir knyttet til en innlevering(delivery)
 		feedback_ID INTEGER(10) NOT NULL AUTO_INCREMENT,
 		feedback_Comment VARCHAR(64) NOT NULL,
 		feedback_HiddenComment VARCHAR(64) NOT NULL,
@@ -129,27 +128,34 @@ USE slitdb;
 		VALUES (1);
         
 	INSERT INTO Teacher (teacher_user_ID, teacher_Office, FK_approvalQueue_ID)
-		VALUES (2, 'H1337',1);
+		VALUES (1, 'H1337',1);
         
     INSERT INTO Tutor (tutor_user_ID, FK_approvalQueue_ID)
 		VALUES (3, 1);
     
-	INSERT INTO Module (module_Name, module_Task, module_Resources, module_Aim, module_Deadline, module_Obligatory)
-		VALUES ('Modul 1 - BlueJ, Klasser og Objekter', 'Lag en video der du forklarer læringsmålene i modulen. Bruk Camtasia Relay eller annet egnet verktøy for skjermopptak. Link skal inn på bloggen. (PS: Max 5 min)', 'Objects first with BlueJ',
-        'Lære å bruke BlueJ', "2016-09-27", TRUE);
+	INSERT INTO Module (module_Name, module_Task, module_Resources, module_Aim, module_Deadline, module_Obligatory, teacher_user_ID)
+		VALUES ('Modul 3 - Modul 3', 'Lag en video der du forklarer læringsmålene i modulen. Bruk Camtasia Relay eller annet egnet verktøy for skjermopptak. Link skal inn på bloggen. (PS: Max 5 min)', 'Objects first with BlueJ',
+        'Lære å bruke BlueJ', "2016-09-30", TRUE, 1);
 	
 	INSERT INTO Delivery (delivery_Name, delivery_Comment, delivery_Status, delivery_Date, student_user_ID, FK_approvalQueue_ID)
 		VALUES ('Modul 1', 'Her er modul 1', TRUE, "2016-09-25", 1, 1);
         
 	INSERT INTO Feedback (feedback_Comment, feedback_HiddenComment, feedback_Date, feedback_Approved, student_user_ID, teacher_user_ID, FK_delivery_ID)
-		VALUES ('Godt jobbet', 'Han har full kontroll', "2016-09-29", TRUE, 1, 2, 1);
+		VALUES ('Godt jobbet', 'Han har full kontroll', "2016-09-29", FALSE, 1, 1, 1);
         
 	INSERT INTO Notification (notification_Title, notification_Text, notification_Date, FK_feedback_ID)
 		VALUES ('Modul 1 Godkjent', 'Modul 1 har blitt godkjent', "2016-09-29", 1);
         
 	INSERT INTO CoursePlan (coursePlan_Name)
-		VALUES ('Semesterplan');
-    
+		VALUES ('Semesterplan');      
+        
+        
+        
+        select * from feedback;
+
+     
+
+
     
 
 		
