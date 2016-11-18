@@ -40,6 +40,9 @@ public class FeedbackManager {
         return this.lookupFeedbackSessionBeanRemote().getFeedbackById(feedbackID);
     }
     
- 
+    public int getFeedbackID(int feedbackID)
+    {
+        return this.lookupFeedbackSessionBeanRemote().getFeedbackID(feedbackID);
+    }
   
 }

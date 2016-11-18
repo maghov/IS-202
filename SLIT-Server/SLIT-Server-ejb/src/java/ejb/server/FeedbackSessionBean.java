@@ -8,10 +8,13 @@ package ejb.server;
 import Common.DataModelConverter;
 import DataModel.FeedbackDataModel;
 import EntityClasses.Feedback;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +30,37 @@ public class FeedbackSessionBean implements FeedbackSessionBeanRemote {
     public Boolean getFeedbackApprovedByInt(int feedbackID) {
         return em.find(Feedback.class, feedbackID).getFeedbackApproved();
     }
+    
+    @Override
+    public int getFeedbackID(int feedbackID) {
+        return em.find(Feedback.class, feedbackID).getFeedbackID();
+    }
+    
+    @Override 
+    public List<FeedbackDataModel> getFeedbackForUser(int deliveryID, int userID ) {
+        List<FeedbackDataModel> feedbackReturnList = new ArrayList<FeedbackDataModel>();
+        
+        try {
+            Query query = em.createQuery("SELECT f FROM Feedback f WHERE f.studentuserID = :userID AND f.fKdeliveryID = :deliveryID");
+            
+            query.setParameter("userID", userID);
+            query.setParameter("deliveryID", deliveryID);
+            
+            List<Feedback> feedbackQueryResult = query.getResultList();
+            
+            for (Feedback feedback : feedbackQueryResult) {
+                feedbackReturnList.add(DataModelConverter.convertFeedbackEntityToFeedbackDataModel(feedback));
+            }
+            
+        } 
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        return feedbackReturnList;
+               
+    }
+            
     
     @Override
     public FeedbackDataModel getFeedbackById(int feedbackID) {

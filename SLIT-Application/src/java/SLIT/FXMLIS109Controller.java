@@ -85,6 +85,10 @@ public class FXMLIS109Controller implements Initializable {
     private Circle circleApproved;
     @FXML
     private Label showTrueOrFalseModule3;
+    @FXML
+    private Tab Module4;
+    @FXML
+    private Label showModule4feedbackData;
 
     
     
@@ -134,7 +138,7 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private void handleModule1Task(Event event) {
         
-        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(3);
+        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
          if (moduleDataModel.getModule_Obligatory() == true);
          {
              this.test.setFill(Color.GREEN);
@@ -159,18 +163,11 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule3Task(Event event) {
-        
-       FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
-       
-       
-       
-       
-        
-        if(this.feedbackManager.getFeedbackApprovedByInt(2) == true) {
+        if(this.feedbackManager.getFeedbackApprovedByInt(1) == true) {
             this.showTrueOrFalseModule3.setText("Godkjent");
             this.circlemodule3.setFill(Color.GREEN);
             }
-        else if (this.feedbackManager.getFeedbackApprovedByInt(2) == false) {
+        else if (this.feedbackManager.getFeedbackApprovedByInt(1) == false) {
             this.showTrueOrFalseModule3.setText("Ikke godkjent");
             System.out.println("modol ikke godkjent");
         }
@@ -178,6 +175,17 @@ public class FXMLIS109Controller implements Initializable {
             this.showTrueOrFalseModule3.setText("hei");
         }
                   
+
+       // ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
+       if (feedbackManager.getFeedbackApprovedByInt(3) == true) {
+       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackApprovedByInt(3).toString());
+       this.circlemodule3.setFill(Color.GREEN);
+       }
+       else {
+           System.out.println("model ikke godkjent");
+       }
+           
+
        /* if (moduleDataModel.getModule_ID() == 1 )
       {
           this.circlemodule3.setFill(Color.AQUA);
@@ -197,4 +205,19 @@ public class FXMLIS109Controller implements Initializable {
        }*/ 
        
 
-    }}
+    }
+
+    @FXML
+    private void handleModule4Task(Event event) {
+        
+   // FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
+     FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
+
+        if (feedbackDataModel.getFeedback_ID() != 0){
+            if (feedbackDataModel.getFeedback_Approved() == true);
+                {
+                    this.showModule4feedbackData.setText(feedbackDataModel.getFeedback_Comment());
+                }
+        }
+    }
+}

@@ -6,6 +6,7 @@
 package Framework;
 
 import DataModel.UserDataModel;
+import SharedCommon.UserTypes;
 import ejb.server.UserSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,6 +44,11 @@ public class UserManager {
     public UserDataModel loginUser(String username, String password) 
     {
         return this.lookupUserSessionBeanRemote().loginUser(username, password);
+    }
+    
+    public UserTypes getUserType(int userID) 
+    {
+        return this.lookupUserSessionBeanRemote().getUserType(userID); 
     }
    
     
