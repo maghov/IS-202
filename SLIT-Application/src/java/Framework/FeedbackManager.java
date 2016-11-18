@@ -30,9 +30,14 @@ public class FeedbackManager {
         }
     }
     
-    public Boolean getFeedbackByID(int feedbackID)
+    public Boolean getFeedbackApprovedByInt(int feedbackID)
     {
         return this.lookupFeedbackSessionBeanRemote().getFeedbackApprovedByInt(feedbackID);
+    }
+    
+    public FeedbackDataModel getFeedbackById(int feedbackID)
+    {
+        return this.lookupFeedbackSessionBeanRemote().getFeedbackById(feedbackID);
     }
     
  

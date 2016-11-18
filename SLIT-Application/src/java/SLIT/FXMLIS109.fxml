@@ -30,10 +30,10 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" prefHeight="17.0" prefWidth="233.0" text="ModuleName" />
-                        <Label fx:id="showModule1Task" layoutX="322.0" layoutY="77.0" prefHeight="121.0" prefWidth="249.0" text="ModuleTask" />
+                        <Label fx:id="showModule1Task" layoutX="103.0" layoutY="77.0" prefHeight="121.0" prefWidth="249.0" text="ModuleTask" wrapText="true" />
                         <Label fx:id="showModule1Resources" layoutX="86.0" layoutY="197.0" prefHeight="37.0" prefWidth="272.0" text="ModuleResources" wrapText="true" />
                         <Label layoutX="26.0" layoutY="60.0" text="Modul" />
-                        <Label layoutX="246.0" layoutY="129.0" text="Oppgave" />
+                        <Label layoutX="27.0" layoutY="129.0" text="Oppgave" />
                         <Label layoutX="19.0" layoutY="207.0" text="Ressurs" />
                         <Label layoutX="24.0" layoutY="249.0" text="Frist" />
                         <Label fx:id="showModuleFrist" layoutX="89.0" layoutY="249.0" text="Modulefrist" />

@@ -11,9 +11,13 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-14T16:16:23")
 =======
 @Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-14T23:05:09")
+>>>>>>> master
+=======
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-15T18:46:42")
 >>>>>>> master
 @StaticMetamodel(Teacher.class)
 public class Teacher_ { 

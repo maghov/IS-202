@@ -122,12 +122,19 @@ public class FXMLIS109Controller implements Initializable {
         }
         else
             this.showModule2Name.setText("This does not work today"); 
+        
+       
+       
+       
+       
+        
+        
     }
 
     @FXML
     private void handleModule1Task(Event event) {
         
-        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
+        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(3);
          if (moduleDataModel.getModule_Obligatory() == true);
          {
              this.test.setFill(Color.GREEN);
@@ -153,11 +160,24 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private void handleModule3Task(Event event) {
         
-       // ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
-       if (feedbackManager.getFeedbackByID(1) == true)
-       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackByID(1).toString());
-       this.circlemodule3.setFill(Color.GREEN);
+       FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
+       
+       
+       
+       
         
+        if(this.feedbackManager.getFeedbackApprovedByInt(2) == true) {
+            this.showTrueOrFalseModule3.setText("Godkjent");
+            this.circlemodule3.setFill(Color.GREEN);
+            }
+        else if (this.feedbackManager.getFeedbackApprovedByInt(2) == false) {
+            this.showTrueOrFalseModule3.setText("Ikke godkjent");
+            System.out.println("modol ikke godkjent");
+        }
+        else {
+            this.showTrueOrFalseModule3.setText("hei");
+        }
+                  
        /* if (moduleDataModel.getModule_ID() == 1 )
       {
           this.circlemodule3.setFill(Color.AQUA);
@@ -177,6 +197,4 @@ public class FXMLIS109Controller implements Initializable {
        }*/ 
        
 
-    }
-
-}
+    }}

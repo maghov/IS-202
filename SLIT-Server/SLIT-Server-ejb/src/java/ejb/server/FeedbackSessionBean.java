@@ -22,10 +22,37 @@ public class FeedbackSessionBean implements FeedbackSessionBeanRemote {
 
     @PersistenceContext(unitName = "SLIT-Server-ejbPU")
     private EntityManager em;
-
+    
     @Override
     public Boolean getFeedbackApprovedByInt(int feedbackID) {
         return em.find(Feedback.class, feedbackID).getFeedbackApproved();
+    }
+    
+    @Override
+    public FeedbackDataModel getFeedbackById(int feedbackID) {
+        
+        FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
+        
+        try 
+        {
+            Feedback feedback = em.find(Feedback.class, feedbackID);
+        
+            
+            if (feedback != null) {
+                
+                feedbackDataModel = DataModelConverter.convertFeedbackEntityToFeedbackDataModel(feedback);
+                
+            }
+                
+        
+        }
+        catch(Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        
+        return feedbackDataModel;
     }
 
 }
