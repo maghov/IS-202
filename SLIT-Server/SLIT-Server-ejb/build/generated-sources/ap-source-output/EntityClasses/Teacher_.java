@@ -10,19 +10,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-14T16:16:23")
-=======
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-14T23:05:09")
->>>>>>> master
-=======
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-15T18:46:42")
->>>>>>> master
-=======
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-17T18:17:00")
->>>>>>> master
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-11-19T17:38:20")
 @StaticMetamodel(Teacher.class)
 public class Teacher_ { 
 

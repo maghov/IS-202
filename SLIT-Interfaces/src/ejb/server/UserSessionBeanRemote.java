@@ -5,8 +5,10 @@
  */
 package ejb.server;
 
+import DataModel.FeedbackDataModel;
 import DataModel.UserDataModel;
 import SharedCommon.UserTypes;
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -31,6 +33,7 @@ public interface UserSessionBeanRemote {
      * @return
      */
     boolean register(String username, String password, String firstName, String lastName, String mail, String Phone);
+    
     
     
     UserDataModel loginUser(String username, String password);

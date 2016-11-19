@@ -64,27 +64,33 @@ public class FXMLLoginPageController implements Initializable {
             
             UserTypes userType = this.userManager.getUserType(user.getUser_ID());
             
-            if(userType != null && userType == UserTypes.Student)
-            {
-             
-                logLabel.setText("Login successfull");
-            
-            System.out.println("Test!");
-            Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
-            Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
-            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage.setScene(VelgFag_page_scene);
-            app_stage.show(); 
+            if(userType != null && userType == UserTypes.Student) {
+                Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
+                Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(VelgFag_page_scene);
+                app_stage.show();
+                System.out.println("Student");
+                
             }
-            
-            
-        }
+                
+                if (userType != null && userType == UserTypes.Teacher) {
+                    System.out.println("Test!");
+                    Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("VelgFag.fxml"));
+                    Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    app_stage.setScene(VelgFag_page_scene);
+                    app_stage.show(); 
+                    System.out.println("Teacher");
+                }
+               
+        
         else 
         {
             this.logLabel.setText("Username or password is incorrect");
         }
 
-        
+        }}
         
         
         /*if(this.userManager.login(this.userNameTextField.getText(), this.passwordTextField.getText()))
@@ -102,7 +108,6 @@ public class FXMLLoginPageController implements Initializable {
         {
             this.logLabel.setText("Username or password is incorrect");
         }*/
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

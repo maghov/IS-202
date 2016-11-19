@@ -6,6 +6,7 @@
 package ejb.server;
 import javax.ejb.Remote;
 import DataModel.FeedbackDataModel;
+import java.util.List;
 
 
 /**
@@ -18,4 +19,5 @@ public interface FeedbackSessionBeanRemote {
    Boolean getFeedbackApprovedByInt(int feedbackID);
    FeedbackDataModel getFeedbackById(int feedbackID);
    int getFeedbackID(int feedbackID);
+   List<FeedbackDataModel> getFeedbackForUser(int deliveryID, int userID);
 }

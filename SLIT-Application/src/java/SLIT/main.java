@@ -27,7 +27,7 @@ public class main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLIS109.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add
         (main.class.getResource("slit.css").toExternalForm());

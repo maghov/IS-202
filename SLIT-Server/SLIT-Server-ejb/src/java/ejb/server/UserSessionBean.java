@@ -14,7 +14,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import Common.DataModelConverter;
+import EntityClasses.Student;
+import EntityClasses.Teacher;
 import SharedCommon.UserTypes;
+import javax.persistence.Query;
 
 
 
@@ -100,15 +103,36 @@ public class UserSessionBean implements UserSessionBeanRemote {
     
     public boolean isUserStudent(int userID) {
         
-        return true;
+        TypedQuery<Student> query = em.createNamedQuery("Student.findByStudentuserID", Student.class);
         
-    }
+        query.setParameter("studentuserID", userID);
+        
+        List<Student> result = query.getResultList();
+        
+        
+        if (result.size() > 0) {
+            return true;
+        }
+        return false;
+        }
+        
     
     public boolean isUserTeacher(int userID) {
         
-        return true;
         
-    }
+        TypedQuery<Teacher> query = em.createNamedQuery("Teacher.findByTeacheruserID", Teacher.class);
+        
+        query.setParameter("teacheruserID", userID);
+        
+        List<Teacher> result = query.getResultList();
+        
+        
+        if (result.size() > 0) {
+            return true;
+        }
+        return false;
+        }
+    
     
     public boolean isUserTutor(int userID) {
         
