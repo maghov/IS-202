@@ -14,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import Common.DataModelConverter;
+import SharedCommon.UserTypes;
 
 
 
@@ -79,6 +80,42 @@ public class UserSessionBean implements UserSessionBeanRemote {
             return false; 
         }
     }
+    
+    @Override
+    public UserTypes getUserType(int userID) {
+        
+        if (this.isUserStudent(userID)) {
+            return UserTypes.Student;
+           
+        }
+        else if(this.isUserTeacher(userID)){
+            return UserTypes.Teacher;
+        }
+        else if(this.isUserTutor(userID))
+        {
+            return UserTypes.Tutor;
+        }
+        return null; 
+    }
+    
+    public boolean isUserStudent(int userID) {
+        
+        return true;
+        
+    }
+    
+    public boolean isUserTeacher(int userID) {
+        
+        return true;
+        
+    }
+    
+    public boolean isUserTutor(int userID) {
+        
+        return true;
+        
+    }
+    
     
     @Override
     public UserDataModel loginUser(String username, String password) {

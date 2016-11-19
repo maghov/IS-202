@@ -54,7 +54,8 @@ public class ModuleManager {
     
     public ModuleDataModel getModuleById(int moduleID)
     {
-        return this.lookupModuleSessionBeanRemote().getModuleById(moduleID);   
+        return this.lookupModuleSessionBeanRemote().getModuleById(moduleID); 
+        
     }
 
     public List<String> getAllModules()

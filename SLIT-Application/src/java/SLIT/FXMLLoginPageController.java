@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Framework.UserManager; 
+import SharedCommon.UserTypes;
 
 
 
@@ -61,14 +62,22 @@ public class FXMLLoginPageController implements Initializable {
         
         if (user.getUser_UserName() != null) {
             
-            logLabel.setText("Login successfull");
+            UserTypes userType = this.userManager.getUserType(user.getUser_ID());
+            
+            if(userType != null && userType == UserTypes.Student)
+            {
+             
+                logLabel.setText("Login successfull");
             
             System.out.println("Test!");
             Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
             Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             app_stage.setScene(VelgFag_page_scene);
-            app_stage.show();  
+            app_stage.show(); 
+            }
+            
+            
         }
         else 
         {

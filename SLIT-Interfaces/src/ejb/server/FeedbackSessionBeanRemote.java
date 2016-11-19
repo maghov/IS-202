@@ -17,4 +17,5 @@ public interface FeedbackSessionBeanRemote {
    
    Boolean getFeedbackApprovedByInt(int feedbackID);
    FeedbackDataModel getFeedbackById(int feedbackID);
+   int getFeedbackID(int feedbackID);
 }

@@ -70,9 +70,12 @@
                      </children></AnchorPane>
                </content>
             </Tab>
-            <Tab text="Modul 4">
+            <Tab fx:id="Module4" onSelectionChanged="#handleModule4Task" text="Modul 4">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="showModule4feedbackData" layoutX="115.0" layoutY="88.0" prefHeight="62.0" prefWidth="142.0" text="Feedback" wrapText="true" />
+                     </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="Modul 5">

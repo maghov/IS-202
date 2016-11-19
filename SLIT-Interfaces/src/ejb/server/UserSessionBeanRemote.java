@@ -6,6 +6,7 @@
 package ejb.server;
 
 import DataModel.UserDataModel;
+import SharedCommon.UserTypes;
 import javax.ejb.Remote;
 
 /**
@@ -18,6 +19,8 @@ public interface UserSessionBeanRemote {
     String businessMethod();
     
     boolean login(String username, String password);
+    
+    UserTypes getUserType(int userID);
     
     /**
      * 
