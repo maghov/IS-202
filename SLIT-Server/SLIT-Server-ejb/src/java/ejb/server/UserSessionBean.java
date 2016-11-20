@@ -113,8 +113,10 @@ public class UserSessionBean implements UserSessionBeanRemote {
         if (result.size() > 0) {
             return true;
         }
-        return false;
+        else {
+            return false;
         }
+    }
         
     
     public boolean isUserTeacher(int userID) {
@@ -130,7 +132,9 @@ public class UserSessionBean implements UserSessionBeanRemote {
         if (result.size() > 0) {
             return true;
         }
-        return false;
+        else {
+            return false;
+        }
         }
     
     
@@ -179,7 +183,7 @@ public class UserSessionBean implements UserSessionBeanRemote {
         if(this.checkUserNameOrMail(username, mail))
             return false;
         
-        Users user = new Users(); 
+        Users user = new Users();
         user.setUserFirstName(firstName);
         user.setUserLastName(lastName);
         user.setUserUserName(username);

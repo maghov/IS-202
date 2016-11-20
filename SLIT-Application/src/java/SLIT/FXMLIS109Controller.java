@@ -163,7 +163,10 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule3Task(Event event) {
-        if(this.feedbackManager.getFeedbackApprovedByInt(1) == true) {
+        
+        
+        
+        if(magnus == moss) {
             this.showTrueOrFalseModule3.setText("Godkjent");
             this.circlemodule3.setFill(Color.GREEN);
             }

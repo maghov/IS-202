@@ -8,6 +8,7 @@ package Framework;
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
 import ejb.server.FeedbackSessionBeanRemote;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -45,4 +46,9 @@ public class FeedbackManager {
         return this.lookupFeedbackSessionBeanRemote().getFeedbackID(feedbackID);
     }
   
+    public List<FeedbackDataModel> getFeedbackForUser(int deliveryID, int userID) {
+        
+        return this.lookupFeedbackSessionBeanRemote().getFeedbackForUser(deliveryID, userID);
+    }
+     
 }

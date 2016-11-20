@@ -70,6 +70,17 @@ public class DataModelConverter {
         
     }
     
+    public static Student convertUserDataModelToStudentEntity(UserDataModel userDataModel) {
+        
+        Student student = new Student();
+        
+        student.setStudentuserID(userDataModel.getUser_ID());
+        
+        return student;
+        
+        
+    }
+    
     public static Users convertUserDataModelToUserEntity(UserDataModel userDataModel) {
         
         Users user = new Users();
