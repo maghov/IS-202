@@ -30,7 +30,18 @@ public class UserManager {
             throw new RuntimeException(ne);
         }
     }
+    
+    private static UserDataModel user; 
+    
+    public static int getUsersLoggedInId() throws Exception
+    {
+        if(user == null)
+            throw new Exception("User is not logged in"); 
         
+        return user.getUser_ID(); 
+    }
+    
+    
     public boolean login(String username, String password)
     {
         return this.lookupUserSessionBeanRemote().login(username, password);
@@ -43,7 +54,13 @@ public class UserManager {
     
     public UserDataModel loginUser(String username, String password) 
     {
-        return this.lookupUserSessionBeanRemote().loginUser(username, password);
+        UserDataModel user = this.lookupUserSessionBeanRemote().loginUser(username, password);
+        
+        UserManager.user = user; 
+                
+        return user; 
+        
+        //return this.lookupUserSessionBeanRemote().loginUser(username, password);
     }
     
     public UserTypes getUserType(int userID) 

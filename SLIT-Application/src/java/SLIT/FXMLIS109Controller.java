@@ -164,9 +164,10 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private void handleModule3Task(Event event) {
         
+
+        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
         
-        
-        if(magnus == moss) {
+        if(feedbackDataModel.getFeedback_Approved() == true) {
             this.showTrueOrFalseModule3.setText("Godkjent");
             this.circlemodule3.setFill(Color.GREEN);
             }
@@ -180,8 +181,8 @@ public class FXMLIS109Controller implements Initializable {
                   
 
        // ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
-       if (feedbackManager.getFeedbackApprovedByInt(3) == true) {
-       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackApprovedByInt(3).toString());
+       if (feedbackManager.getFeedbackApprovedByInt(1) == true) {
+       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackApprovedByInt(1).toString());
        this.circlemodule3.setFill(Color.GREEN);
        }
        else {
@@ -208,14 +209,23 @@ public class FXMLIS109Controller implements Initializable {
        }*/ 
        
 
+
+       //ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
+       if (feedbackManager.getFeedbackApprovedByInt(1) == true){
+       this.showTrueOrFalseModule3.setText(feedbackManager.getFeedbackApprovedByInt(1).toString());
+       this.circlemodule3.setFill(Color.GREEN);
+       }
+       else {
+           System.out.println("Mo er kul");
+       }
+
     }
 
     @FXML
     private void handleModule4Task(Event event) {
         
-   // FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
-     FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
-
+   //FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
+        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
         if (feedbackDataModel.getFeedback_ID() != 0){
             if (feedbackDataModel.getFeedback_Approved() == true);
                 {
@@ -223,4 +233,6 @@ public class FXMLIS109Controller implements Initializable {
                 }
         }
     }
+    
+  
 }

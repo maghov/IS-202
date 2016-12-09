@@ -7,6 +7,7 @@ package Framework;
 
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
+import DataModel.UserDataModel;
 import ejb.server.FeedbackSessionBeanRemote;
 import java.util.List;
 import java.util.logging.Level;
@@ -41,14 +42,16 @@ public class FeedbackManager {
         return this.lookupFeedbackSessionBeanRemote().getFeedbackById(feedbackID);
     }
     
+    
     public int getFeedbackID(int feedbackID)
     {
         return this.lookupFeedbackSessionBeanRemote().getFeedbackID(feedbackID);
     }
   
-    public List<FeedbackDataModel> getFeedbackForUser(int deliveryID, int userID) {
-        
-        return this.lookupFeedbackSessionBeanRemote().getFeedbackForUser(deliveryID, userID);
+    public List<FeedbackDataModel> getFeedbackForUser(int deliveryID) throws Exception {
+
+        return this.lookupFeedbackSessionBeanRemote().getFeedbackForUser(deliveryID, UserManager.getUsersLoggedInId());
     }
+    
      
 }
