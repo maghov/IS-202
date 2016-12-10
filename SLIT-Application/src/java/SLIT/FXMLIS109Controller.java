@@ -96,10 +96,7 @@ public class FXMLIS109Controller implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
    
     }
-    
-    
- 
-    
+
     @FXML
     private void handleBackTask(ActionEvent event)throws IOException {
         Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("FXMLVelgFag.fxml"));
@@ -126,12 +123,7 @@ public class FXMLIS109Controller implements Initializable {
         }
         else
             this.showModule2Name.setText("This does not work today"); 
-        
-       
-       
-       
-       
-        
+
         
     }
 
@@ -163,9 +155,7 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule3Task(Event event) {
-        
-
-        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
+       FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
         
         if(feedbackDataModel.getFeedback_Approved() == true) {
             this.showTrueOrFalseModule3.setText("Godkjent");
