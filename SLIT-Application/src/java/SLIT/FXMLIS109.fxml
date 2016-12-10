@@ -75,6 +75,15 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label fx:id="showModule4feedbackData" layoutX="115.0" layoutY="88.0" prefHeight="62.0" prefWidth="142.0" text="Feedback" wrapText="true" />
+                        <Label fx:id="showFeedbackModul4" layoutX="145.0" layoutY="233.0" text="Label" />
+                        <TableView fx:id="feedbackList" layoutX="15.0" layoutY="7.0" prefHeight="200.0" prefWidth="623.0">
+                          <columns>
+                            <TableColumn fx:id="FeedBackFrom" prefWidth="150.0" text="Fra hvem" />
+                            <TableColumn fx:id="FeedBackComment" minWidth="0.0" prefWidth="134.0" text="Kommenter" />
+                              <TableColumn fx:id="FeedBackDate" prefWidth="167.0" text="Dato" />
+                              <TableColumn fx:id="FeedBackStatus" prefWidth="118.0" text="Status" />
+                          </columns>
+                        </TableView>
                      </children></AnchorPane>
                </content>
             </Tab>

@@ -25,10 +25,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -98,12 +105,30 @@ public class FXMLIS109Controller implements Initializable {
     private Tab Module4;
     @FXML
     private Label showModule4feedbackData;
+    @FXML
+
+    private Label showFeedbackModul4;
+    @FXML
+    private TableView<FeedbackDataModel> feedbackList;
+    @FXML
+    private TableColumn<FeedbackDataModel, String> FeedBackFrom;
+    @FXML
+    private TableColumn<FeedbackDataModel, String> FeedBackComment;
+    @FXML
+    private TableColumn<FeedbackDataModel, String> FeedBackDate;
+    @FXML
+    private TableColumn<FeedbackDataModel, String> FeedBackStatus;
 
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-   
+            
+            FeedBackFrom.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String>("FK_teacher_user_ID"));
+            FeedBackComment.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Comment"));
+            FeedBackDate.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Date"));
+            FeedBackStatus.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Status"));
+            
     }
 
     @FXML
@@ -223,13 +248,24 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private void handleModule4Task(Event event) throws Exception {
         
-       //DeliveryDataModel deliveryDataModel = this.deliveryManager.getDeliveryById(1);
+       FeedbackManager feedbackmanager = new FeedbackManager();
        
-        List<FeedbackDataModel> feedbackDataModel = this.feedbackManager.getFeedbackForUser(1);
+       List<FeedbackDataModel> list = feedbackmanager.getFeedbackForUser(1);
        
-       this.showModule4feedbackData.setText(feedbackDataModel.toString());
-        
-    }}
+       ObservableList<FeedbackDataModel> observableList = FXCollections.observableArrayList();
+       
+       
+       
+       for(FeedbackDataModel entity : list)
+       {
+           observableList.add(entity); 
+           //System.out.println(entity);
+           //System.out.println("Test");
+       }
+       
+       this.feedbackList.setItems(observableList);
+    }
+}
         
    /*FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
         FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);

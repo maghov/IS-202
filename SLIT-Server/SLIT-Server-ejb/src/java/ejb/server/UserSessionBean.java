@@ -21,6 +21,7 @@ import javax.persistence.Query;
 
 
 
+
 /**
  *
  * @author Mohammad
@@ -184,6 +185,7 @@ public class UserSessionBean implements UserSessionBeanRemote {
             return false;
         
         Users user = new Users();
+               
         user.setUserFirstName(firstName);
         user.setUserLastName(lastName);
         user.setUserUserName(username);
@@ -195,16 +197,54 @@ public class UserSessionBean implements UserSessionBeanRemote {
         {
             em.persist(user);
             
+            Users registeredUser = this.getUserFromMail(user.getUserEmail()); 
+            
+            if(registeredUser != null)
+            {
+                System.out.println("Registered user:" + registeredUser.getUserID()); 
+                
+                Student student = new Student();
+                student.setUsers(registeredUser);
+                student.setStudentuserID(registeredUser.getUserID());
+                
+                Query query = em.createQuery("INSERT INTO Student VALUES(:userid)"); 
+                
+                query.setParameter("userid", registeredUser.getUserID()); 
+               
+                //em.persist(student);
+            }
+            
+            //student.setStudentuserID(this.getUserFromMail(user.getUserEmail()).getUserID());  
+            
+            //em.persist(student);
+            
             return true; 
         }
         catch(Exception e) 
         {
-            return false;
+            e.printStackTrace();
         }
-        
+
+        return false; 
     }
    
+    public Users getUserFromMail(String mail)
+    {
+        Query query = em.createNamedQuery("Users.findByUserEmail", Users.class); 
+        query.setParameter("userEmail", mail); 
         
+        try 
+        {
+            Users user = (Users)query.getSingleResult(); 
+            
+            return user; 
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null; 
+    }
       
         
   

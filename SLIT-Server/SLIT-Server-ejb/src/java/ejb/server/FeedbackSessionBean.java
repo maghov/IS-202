@@ -41,7 +41,7 @@ public class FeedbackSessionBean implements FeedbackSessionBeanRemote {
         List<FeedbackDataModel> feedbackReturnList = new ArrayList<FeedbackDataModel>();
         
         try {
-            Query query = em.createQuery("SELECT f FROM Feedback f WHERE f.studentuserID = :userID AND f.fKdeliveryID = :deliveryID");
+            Query query = em.createQuery("SELECT f FROM Feedback f WHERE f.studentuserID.studentuserID = :userID AND f.fKdeliveryID.deliveryID = :deliveryID");
             
             query.setParameter("userID", userID);
             query.setParameter("deliveryID", deliveryID);

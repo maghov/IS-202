@@ -29,7 +29,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" maxHeight="1.7976931348623157E308" prefHeight="17.0" prefWidth="232.0" text="ModuleName" />
+                        <Label fx:id="showModule1Name" layoutX="89.0" layoutY="60.0" prefHeight="17.0" prefWidth="233.0" text="ModuleName" />
                         <Label fx:id="showModule1Task" layoutX="103.0" layoutY="77.0" prefHeight="121.0" prefWidth="249.0" text="ModuleTask" wrapText="true" />
                         <Label fx:id="showModule1Resources" layoutX="86.0" layoutY="197.0" prefHeight="37.0" prefWidth="272.0" text="ModuleResources" wrapText="true" />
                         <Label layoutX="26.0" layoutY="60.0" text="Modul" />
@@ -75,6 +75,15 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label fx:id="showModule4feedbackData" layoutX="115.0" layoutY="88.0" prefHeight="62.0" prefWidth="142.0" text="Feedback" wrapText="true" />
+                        <Label fx:id="showFeedbackModul4" layoutX="145.0" layoutY="233.0" text="Label" />
+                        <TableView fx:id="feedbackList" layoutX="15.0" layoutY="7.0" prefHeight="200.0" prefWidth="623.0">
+                          <columns>
+                            <TableColumn fx:id="FeedBackFrom" prefWidth="150.0" text="Fra hvem" />
+                            <TableColumn fx:id="FeedBackComment" minWidth="0.0" prefWidth="134.0" text="Kommenter" />
+                              <TableColumn fx:id="FeedBackDate" prefWidth="167.0" text="Dato" />
+                              <TableColumn fx:id="FeedBackStatus" prefWidth="118.0" text="Status" />
+                          </columns>
+                        </TableView>
                      </children></AnchorPane>
                </content>
             </Tab>
