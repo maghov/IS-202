@@ -87,9 +87,25 @@
                      </children></AnchorPane>
                </content>
             </Tab>
-            <Tab text="Modul 5">
+            <Tab fx:id="Module5" onSelectionChanged="#handleModule5Task" text="Modul 5">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="showModule5Name" layoutX="45.0" layoutY="32.0" prefHeight="27.0" prefWidth="117.0" text="ModuleName" wrapText="true" />
+                        <Label fx:id="showModule5Task" alignment="TOP_LEFT" layoutX="42.0" layoutY="94.0" prefHeight="190.0" prefWidth="341.0" text="ModuleTask" wrapText="true" />
+                        <Label fx:id="showModule5Resources" alignment="TOP_LEFT" layoutX="402.0" layoutY="121.0" prefHeight="113.0" prefWidth="393.0" text="ModuleResources" wrapText="true" />
+                        <Label fx:id="showModule5Deadline" layoutX="194.0" layoutY="35.0" prefHeight="21.0" prefWidth="108.0" text="ModuleDeadline" />
+                        <Label fx:id="showModule5Aim" alignment="TOP_LEFT" layoutX="42.0" layoutY="278.0" prefHeight="191.0" prefWidth="323.0" text="ModuleAim" wrapText="true" />
+                        <Label fx:id="showModule5Obligatory" layoutX="487.0" layoutY="37.0" prefHeight="17.0" prefWidth="121.0" text="ModuleObligaotry" wrapText="true" />
+                        <Circle fx:id="showModule5Approved" fill="DODGERBLUE" layoutX="24.0" layoutY="45.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="42.0" layoutY="262.0" prefHeight="17.0" prefWidth="90.0" text="Læringsmål:" />
+                        <Label layoutX="42.0" layoutY="77.0" prefHeight="17.0" prefWidth="75.0" text="Oppgave:" />
+                        <Label layoutX="402.0" layoutY="94.0" text="Ressurser:" />
+                        <Label layoutX="158.0" layoutY="37.0" prefHeight="17.0" prefWidth="54.0" text="Frist:" />
+                        <Label layoutX="402.0" layoutY="37.0" prefHeight="17.0" prefWidth="85.0" text="Obligatorisk:" />
+                        <Label layoutX="402.0" layoutY="262.0" prefHeight="17.0" prefWidth="105.0" text="Tilbakemelding:" />
+                        <Label fx:id="showModule5Feedback" alignment="TOP_LEFT" layoutX="402.0" layoutY="284.0" prefHeight="189.0" prefWidth="386.0" text="ModuleFeedback" />
+                     </children></AnchorPane>
                </content>
             </Tab>
         </tabs>
