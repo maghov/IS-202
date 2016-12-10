@@ -75,13 +75,7 @@ public class FXMLLoginPageController implements Initializable {
             }
                 
                 if (userType != null && userType == UserTypes.Teacher) {
-                    System.out.println("Test!");
-                    Parent VelgFag_page_parent = FXMLLoader.load(getClass().getResource("VelgFag.fxml"));
-                    Scene VelgFag_page_scene = new Scene(VelgFag_page_parent);
-                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    app_stage.setScene(VelgFag_page_scene);
-                    app_stage.show(); 
-                    System.out.println("Teacher");
+
                 }
                
         
