@@ -5,8 +5,11 @@
  */
 package SLIT;
 
+import DataModel.DeliveryDataModel;
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
+import DataModel.UserDataModel;
+import Framework.DeliveryManager;
 import Framework.ModuleManager;
 import Framework.FeedbackManager;
 import Framework.UserManager;
@@ -22,6 +25,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.text.DateFormat;
+import java.util.List;
 import javafx.event.Event;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -53,9 +57,14 @@ public class FXMLIS109Controller implements Initializable {
    
     private final ModuleManager moduleManager = new ModuleManager();
     
+    private final DeliveryManager deliveryManager = new DeliveryManager();
+    
     private final FeedbackManager feedbackManager = new FeedbackManager();
     
     private final UserManager userManager = new UserManager();
+    
+    public static UserDataModel user;
+    
     
     @FXML
     private Label showModule1Resources;
@@ -212,9 +221,17 @@ public class FXMLIS109Controller implements Initializable {
     }
 
     @FXML
-    private void handleModule4Task(Event event) {
+    private void handleModule4Task(Event event) throws Exception {
         
-   //FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
+       //DeliveryDataModel deliveryDataModel = this.deliveryManager.getDeliveryById(1);
+       
+        List<FeedbackDataModel> feedbackDataModel = this.feedbackManager.getFeedbackForUser(1);
+       
+       this.showModule4feedbackData.setText(feedbackDataModel.toString());
+        
+    }}
+        
+   /*FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
         FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
         if (feedbackDataModel.getFeedback_ID() != 0){
             if (feedbackDataModel.getFeedback_Approved() == true);
@@ -223,6 +240,6 @@ public class FXMLIS109Controller implements Initializable {
                 }
         }
     }
-    
+   */ 
   
-}
+

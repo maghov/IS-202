@@ -71,6 +71,7 @@ public class FXMLLoginPageController implements Initializable {
                 app_stage.setScene(VelgFag_page_scene);
                 app_stage.show();
                 System.out.println("Student");
+                System.out.println(user.getUser_ID());
                 
             }
                 

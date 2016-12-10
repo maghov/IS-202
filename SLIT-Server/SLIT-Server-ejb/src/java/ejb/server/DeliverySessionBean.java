@@ -5,15 +5,49 @@
  */
 package ejb.server;
 
+import Common.DataModelConverter;
+import DataModel.DeliveryDataModel;
+import EntityClasses.Delivery;
+
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author magnushovik
+ * @author Mohammad
  */
 @Stateless
 public class DeliverySessionBean implements DeliverySessionBeanRemote {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @PersistenceContext(unitName = "SLIT-Server-ejbPU")
+    private EntityManager em;
+    
+    @Override
+    public DeliveryDataModel getDeliveryById(int deliveryID) {
+        
+        DeliveryDataModel deliveryDataModel = new DeliveryDataModel();
+        
+        try 
+        {
+            Delivery delivery = em.find(Delivery.class, deliveryID);
+        
+            
+            if (delivery != null) {
+                
+                deliveryDataModel = DataModelConverter.convertDeliveryEntityToDeliveryDataModel(delivery);
+                
+            }
+                
+        
+        }
+        catch(Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        
+        return deliveryDataModel;
+    }
+
 }

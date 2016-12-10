@@ -5,6 +5,7 @@
  */
 package Common;
 
+import DataModel.DeliveryDataModel;
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
 import DataModel.StudentDataModel;
@@ -15,6 +16,7 @@ import EntityClasses.Module;
 import EntityClasses.Student;
 import EntityClasses.Teacher;
 import EntityClasses.Users;
+import EntityClasses.Delivery;
 
 /**
  *
@@ -67,6 +69,27 @@ public class DataModelConverter {
         userDataModel.setUser_ID(user.getUserID());
         
         return userDataModel;
+        
+    }
+        
+    public static DeliveryDataModel convertDeliveryEntityToDeliveryDataModel(Delivery delivery) {
+        
+        DeliveryDataModel deliveryDataModel = new DeliveryDataModel();
+        
+        deliveryDataModel.setDelivery_Comment(delivery.getDeliveryComment());
+        deliveryDataModel.setDelivery_Date(delivery.getDeliveryDate());
+        deliveryDataModel.setDelivery_ID(delivery.getDeliveryID());
+        deliveryDataModel.setDelivery_Name(delivery.getDeliveryName());
+        deliveryDataModel.setDelivery_Status(delivery.getDeliveryStatus());
+        deliveryDataModel.setFK_approvalQueue_ID(delivery.getFKapprovalQueueID().getApprovalQueueID());
+        deliveryDataModel.setStudent_user_ID(delivery.getStudentuserID().getStudentuserID());
+        deliveryDataModel.setTeacher_user_ID(delivery.getTeacheruserID().getTeacheruserID());
+        deliveryDataModel.setTutor_user_ID(delivery.getTutoruserID().getTutoruserID());
+        
+        
+        return deliveryDataModel;
+        
+    
         
     }
     

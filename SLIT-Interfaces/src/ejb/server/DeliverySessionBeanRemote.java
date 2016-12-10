@@ -5,6 +5,7 @@
  */
 package ejb.server;
 
+import DataModel.DeliveryDataModel;
 import javax.ejb.Remote;
 
 /**
@@ -13,5 +14,7 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface DeliverySessionBeanRemote {
+
+    public DeliveryDataModel getDeliveryById(int deliveryID);
     
 }
