@@ -123,6 +123,7 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private TableColumn<FeedbackDataModel, Boolean> FeedBackStatus;
 
+    @FXML
     private Label showModule5Name;
     @FXML
     private Label showModule5Task;
@@ -140,6 +141,22 @@ public class FXMLIS109Controller implements Initializable {
     private Label showModule5Feedback;
     @FXML
     private Circle showModule5Approved;
+    @FXML
+    private Tab IS109;
+    @FXML
+    private TableColumn<?, ?> moduleName;
+    @FXML
+    private TableColumn<?, ?> moduleBeskrivelse;
+    @FXML
+    private TableColumn<?, ?> moduleObligatorisk;
+    @FXML
+    private TableColumn<?, ?> moduleFrist;
+    @FXML
+    private TableColumn<?, ?> moduleFulført;
+    @FXML
+    private Label showCoursePlanForelesning;
+    @FXML
+    private Label showCoursePlanPlan;
 
 
     @Override
@@ -298,20 +315,19 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule5Task(Event event) {
-        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
-        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
+        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(3);
+        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(4);
 
         if (moduleDataModel.getModule_ID() != 0) {
             this.showModule5Name.setText(moduleDataModel.getModule_Name());
             this.showModule5Task.setText(moduleDataModel.getModule_Task());
             this.showModule5Resources.setText(moduleDataModel.getModule_Resources());
-            //this.showModule5Deadline.setText(moduleDataModel.getModule_Deadline().toString()); #Viser Date på en dårlig måte
-            this.showModule5Deadline.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline()));
             this.showModule5Aim.setText(moduleDataModel.getModule_Aim());
-            this.showModule5Feedback.setText(feedbackDataModel.getFeedback_Comment());
+            this.showModule5Deadline.setText(DateFormat.getDateInstance().format(moduleDataModel.getModule_Deadline()));
+            
             if (feedbackDataModel.getFeedback_Approved() == true) {
-                
-                this.showModule5Approved.setFill(Color.GREEN);
+                 
+               this.showModule5Approved.setFill(Color.GREEN);
             }else{
                 this.showModule5Approved.setFill(Color.RED);
             }
@@ -325,6 +341,10 @@ public class FXMLIS109Controller implements Initializable {
         } else {
             System.out.println("Denne Modulen Finnes Ikke.");
         }
+    }
+
+    @FXML
+    private void handleIS109(Event event) {
     }
 
 }
