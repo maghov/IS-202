@@ -35,6 +35,7 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Menu;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -123,6 +124,7 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private TableColumn<FeedbackDataModel, Boolean> FeedBackStatus;
 
+    @FXML
     private Label showModule5Name;
     @FXML
     private Label showModule5Task;
@@ -325,6 +327,15 @@ public class FXMLIS109Controller implements Initializable {
         } else {
             System.out.println("Denne Modulen Finnes Ikke.");
         }
+    }
+
+    @FXML
+    private void handleLogOutTask(ActionEvent event) throws IOException, Exception {
+        Parent LoginPage_page_parent = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
+        Scene LoginPage_page_scene = new Scene(LoginPage_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(LoginPage_page_scene);
+        app_stage.show();
     }
 
 }
