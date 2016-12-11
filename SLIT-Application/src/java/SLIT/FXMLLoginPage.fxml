@@ -18,5 +18,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
+      <Label fx:id="feedBack" layoutX="88.0" layoutY="295.0" text="Label" />
+      <Label fx:id="feedbackTeacher" layoutX="244.0" layoutY="295.0" text="Label" />
    </children>
 </AnchorPane>

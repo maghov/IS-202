@@ -159,14 +159,34 @@ public class DataModelConverter {
     }
     public static FeedbackDataModel convertFeedbackEntityToFeedbackDataModel(Feedback feedback) {
         FeedbackDataModel feedbackDataModel = new FeedbackDataModel();
-        TeacherDataModel teacherDataModel = new TeacherDataModel();
+
         
         feedbackDataModel.setFeedback_ID(feedback.getFeedbackID());
         feedbackDataModel.setFeedback_Approved(feedback.getFeedbackApproved());
         feedbackDataModel.setFeedback_Comment(feedback.getFeedbackComment());
         feedbackDataModel.setFeedback_Date(feedback.getFeedbackDate());
-        teacherDataModel.setTeacher_user(teacherDataModel.getTeacher_user());
+        //feedbackDataModel.setTeacher_user(convertTeacherEntityToTeacherDataModel(feedback.getTeacheruserID()));
         feedbackDataModel.setFeedback_HiddenComment(feedback.getFeedbackHiddenComment());
+        
+        
+         if (feedback.getTeacheruserID() != null)
+        {
+            TeacherDataModel teacherDataModel = new TeacherDataModel();
+            
+            Teacher teacher = feedback.getTeacheruserID();
+            
+            teacherDataModel = convertTeacherEntityToTeacherDataModel(teacher);
+            
+            feedbackDataModel.setTeacher_user(teacherDataModel);
+            
+            //moduleDataModel.setTeacher_user(convertTeacherEntityToTeacherDataModel(module.getTeacheruserID()));
+            
+        }
+        
+        
+        
+        
+        
         return feedbackDataModel;     
          
     

@@ -5,7 +5,9 @@
  */
 package SLIT;
 
+import DataModel.FeedbackDataModel;
 import DataModel.UserDataModel;
+import Framework.FeedbackManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,10 +41,16 @@ public class FXMLLoginPageController implements Initializable {
     
     private UserManager userManager = new UserManager();
     
+    private FeedbackManager feedbackManager = new FeedbackManager();
+    
     public static UserDataModel user;
     
     @FXML
     private Label logLabel;
+    @FXML
+    private Label feedBack;
+    @FXML
+    private Label feedbackTeacher;
    
     @FXML 
     public void goToRegisterButton(ActionEvent event) throws IOException {
@@ -112,7 +120,14 @@ public class FXMLLoginPageController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
+      
+        
+        this.feedbackTeacher.setText(feedbackDataModel.getTeacher_user().getTeacher_user().getUser_FirstName());
+        this.feedBack.setText(feedbackDataModel.getFeedback_Comment());
+        
+        
     }    
     
 }

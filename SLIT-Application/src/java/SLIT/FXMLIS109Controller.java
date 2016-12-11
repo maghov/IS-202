@@ -121,7 +121,7 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private TableColumn<FeedbackDataModel, String> FeedBackDate;
     @FXML
-    private TableColumn<FeedbackDataModel, String> FeedBackStatus;
+    private TableColumn<FeedbackDataModel, Boolean> FeedBackStatus;
 
     private Label showModule5Name;
     @FXML
@@ -144,11 +144,28 @@ public class FXMLIS109Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+            
+            FeedBackFrom.setCellValueFactory(new Callback<CellDataFeatures<FeedbackDataModel, String>,ObservableValue<String>>(){
 
-            FeedBackFrom.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("teacher_user_id"));
+                @Override
+                public ObservableValue<String> call(CellDataFeatures<FeedbackDataModel, String> param) {
+                    return new SimpleStringProperty(param.getValue().getTeacher_user().getTeacher_user().getUser_FirstName());
+                }
+            });
+            
+            FeedBackDate.setCellValueFactory(new Callback<CellDataFeatures<FeedbackDataModel, String>,ObservableValue<String>>(){
+                    
+                @Override
+                public ObservableValue<String> call(CellDataFeatures<FeedbackDataModel, String> param) {
+                    return new SimpleStringProperty(DateFormat.getDateInstance().format(param.getValue().getFeedback_Date()));
+                }
+            });
             FeedBackComment.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Comment"));
-            FeedBackDate.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Date"));
-            FeedBackStatus.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Status"));
+            //FeedBackDate.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, Date> ("feedback_Date"));
+            FeedBackStatus.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, Boolean> ("feedback_Approved"));
+                                                
+       
+
             
 
     }
@@ -281,7 +298,7 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule5Task(Event event) {
-        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(3);
+        ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(1);
         FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
 
         if (moduleDataModel.getModule_ID() != 0) {
