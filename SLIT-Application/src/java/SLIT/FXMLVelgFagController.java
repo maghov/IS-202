@@ -54,6 +54,13 @@ public class FXMLVelgFagController implements Initializable {
             System.out.println(Framework.UserManager.getUsersLoggedInId());
     }
     
-    
+    @FXML
+    private void handleLogOutTask(ActionEvent event) throws IOException, Exception {
+        Parent LoginPage_page_parent = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
+        Scene LoginPage_page_scene = new Scene(LoginPage_page_parent);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(LoginPage_page_scene);
+        app_stage.show();
+    }
  
 }
