@@ -8,6 +8,7 @@ package SLIT;
 import DataModel.DeliveryDataModel;
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
+import DataModel.TeacherDataModel;
 import DataModel.UserDataModel;
 import Framework.DeliveryManager;
 import Framework.ModuleManager;
@@ -27,6 +28,8 @@ import javafx.stage.Stage;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -34,12 +37,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 import javafx.scene.shape.Circle;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -104,7 +109,7 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private Label showModule4feedbackData;
     @FXML
-<<<<<<< Updated upstream
+
 
     private Label showFeedbackModul4;
     @FXML
@@ -117,7 +122,7 @@ public class FXMLIS109Controller implements Initializable {
     private TableColumn<FeedbackDataModel, String> FeedBackDate;
     @FXML
     private TableColumn<FeedbackDataModel, String> FeedBackStatus;
-=======
+
     private Label showModule5Name;
     @FXML
     private Label showModule5Task;
@@ -135,20 +140,17 @@ public class FXMLIS109Controller implements Initializable {
     private Label showModule5Feedback;
     @FXML
     private Circle showModule5Approved;
->>>>>>> Stashed changes
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< Updated upstream
-            
-            FeedBackFrom.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String>("FK_teacher_user_ID"));
+
+            FeedBackFrom.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("teacher_user_id"));
             FeedBackComment.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Comment"));
             FeedBackDate.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Date"));
             FeedBackStatus.setCellValueFactory(new PropertyValueFactory<FeedbackDataModel, String> ("feedback_Status"));
             
-=======
 
->>>>>>> Stashed changes
     }
 
     @FXML
@@ -255,7 +257,7 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private void handleModule4Task(Event event) throws Exception {
-<<<<<<< Updated upstream
+
         
        FeedbackManager feedbackmanager = new FeedbackManager();
        
@@ -274,17 +276,8 @@ public class FXMLIS109Controller implements Initializable {
        
        this.feedbackList.setItems(observableList);
     }
-}
-        
-   /*FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
-=======
 
-        //DeliveryDataModel deliveryDataModel = this.deliveryManager.getDeliveryById(1);
-        List<FeedbackDataModel> feedbackDataModel = this.feedbackManager.getFeedbackForUser(1);
-
-        this.showModule4feedbackData.setText(feedbackDataModel.toString());
-
-    }
+       
 
     @FXML
     private void handleModule5Task(Event event) {
@@ -318,15 +311,3 @@ public class FXMLIS109Controller implements Initializable {
     }
 
 }
-
-/*FeedbackDataModel feedbackDataModel =  feedbackDataModel.getFeedback_ID();
->>>>>>> Stashed changes
-        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
-        if (feedbackDataModel.getFeedback_ID() != 0){
-            if (feedbackDataModel.getFeedback_Approved() == true);
-                {
-                    this.showModule4feedbackData.setText(feedbackDataModel.getFeedback_Comment());
-                }
-        }
-    }
- */

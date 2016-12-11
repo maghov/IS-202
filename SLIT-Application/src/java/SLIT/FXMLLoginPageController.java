@@ -76,7 +76,13 @@ public class FXMLLoginPageController implements Initializable {
             }
                 
                 if (userType != null && userType == UserTypes.Teacher) {
-
+                Parent TeacherPage_page_parent = FXMLLoader.load(getClass().getResource("FXMLTeacherPage.fxml"));
+                Scene TeacherPage_page_scene = new Scene(TeacherPage_page_parent);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(TeacherPage_page_scene);
+                app_stage.show();
+                System.out.println("Teacher");
+                System.out.println(user.getUser_ID());
                 }
                
         

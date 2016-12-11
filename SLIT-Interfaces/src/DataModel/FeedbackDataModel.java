@@ -21,8 +21,9 @@ public class FeedbackDataModel implements java.io.Serializable {
     
     private Date feedback_Date;
     
-    private Boolean feedback_Approved;  
-
+    private Boolean feedback_Approved;
+    
+    private TeacherDataModel teacher_user;
 
     public int getFeedback_ID() {
         return feedback_ID;
@@ -60,12 +61,19 @@ public class FeedbackDataModel implements java.io.Serializable {
         return feedback_Approved;
     }
 
-    public void setFeedback_Approved(boolean feedback_Approved) {
+    public void setFeedback_Approved(Boolean feedback_Approved) {
         this.feedback_Approved = feedback_Approved;
     }
 
-   
+    public TeacherDataModel getTeacher_user() {
+        return teacher_user;
+    }
+
+    public void setTeacher_user(TeacherDataModel teacher_user) {
+        this.teacher_user = teacher_user;
+    }
+    
+}
 
 
     
-}
