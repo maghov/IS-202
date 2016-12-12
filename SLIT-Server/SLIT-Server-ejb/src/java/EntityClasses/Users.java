@@ -212,5 +212,10 @@ public class Users implements Serializable {
     public String toString() {
         return "EntityClasses.Users[ userID=" + userID + " ]";
     }
+
+
+    public void setUserTutor(boolean userTutor) {
+        this.userTutor = userTutor;
+    }
     
 }

@@ -33,6 +33,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
@@ -41,10 +42,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 import javafx.scene.shape.Circle;
+import javafx.stage.Modality;
 import javafx.util.Callback;
 
 /**
@@ -56,11 +59,15 @@ public class FXMLIS109Controller implements Initializable {
 
     @FXML
     private Tab Module1;
+    @FXML
     private Label showModule1Name;
+    @FXML
     private Label showModule1Task;
     @FXML
     private Tab Module2;
+    @FXML
     private Label showModule2Name;
+    @FXML
     private Label showModule2Task;
 
     private final ModuleManager moduleManager = new ModuleManager();
@@ -73,35 +80,53 @@ public class FXMLIS109Controller implements Initializable {
 
     public static UserDataModel user;
 
+    @FXML
     private Label showModule1Resources;
+    @FXML
     private Label showModuleFrist;
+    @FXML
     private Circle test;
+    @FXML
     private Label showModule1Aim;
+    @FXML
     private Label showModule2Aim;
     private Paint blue;
     private Paint red;
+    @FXML
     private Circle circlemodule3;
+    @FXML
     private Circle circleApproved;
+    @FXML
     private Label showTrueOrFalseModule3;
     @FXML
     private Tab Module4;
+    @FXML
     private TableView<FeedbackDataModel> feedbackList;
+    @FXML
     private TableColumn<FeedbackDataModel, String> FeedBackFrom;
+    @FXML
     private TableColumn<FeedbackDataModel, String> FeedBackComment;
+    @FXML
     private TableColumn<FeedbackDataModel, String> FeedBackDate;
+    @FXML
     private TableColumn<FeedbackDataModel, Boolean> FeedBackStatus;
 
     @FXML
     private Label showModule5Name;
+    @FXML
     private Label showModule5Task;
+    @FXML
     private Label showModule5Obligatory;
+    @FXML
     private Label showModule5Resources;
+    @FXML
     private Label showModule5Deadline;
+    @FXML
     private Label showModule5Aim;
-    private Label showModule5Feedback;
+    @FXML
     private Circle showModule5Approved;
     @FXML
-    private Tab IS109;
+    private Button btn1;
     @FXML
     private TableColumn<?, ?> moduleName;
     @FXML
@@ -116,6 +141,24 @@ public class FXMLIS109Controller implements Initializable {
     private Label showCoursePlanForelesning;
     @FXML
     private Label showCoursePlanPlan;
+    @FXML
+    private Label Aim;
+    @FXML
+    private Label showFeedbackApproved;
+    @FXML
+    private Label showFeedbackApprovedbyTeacher;
+    @FXML
+    private Label showModule1Obligatory;
+    @FXML
+    private Tab Module3;
+    @FXML
+    private Label showModule4feedbackData;
+    @FXML
+    private Label showFeedbackModul4;
+    @FXML
+    private Tab Module5;
+    @FXML
+    private Label showModule5Feedback;
 
 
     @Override
@@ -198,6 +241,7 @@ public class FXMLIS109Controller implements Initializable {
          */
     }
 
+    @FXML
     private void handleModule3Task(Event event) {
         FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
 
@@ -271,6 +315,7 @@ public class FXMLIS109Controller implements Initializable {
 
        
 
+    @FXML
     private void handleModule5Task(Event event) {
         ModuleDataModel moduleDataModel = this.moduleManager.getModuleById(3);
         FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(4);
@@ -300,17 +345,39 @@ public class FXMLIS109Controller implements Initializable {
         }
     }
 
-    @FXML
-<<<<<<< HEAD
-    private void handleIS109(Event event) {
-=======
     private void handleLogOutTask(ActionEvent event) throws IOException, Exception {
         Parent LoginPage_page_parent = FXMLLoader.load(getClass().getResource("FXMLLoginPage.fxml"));
         Scene LoginPage_page_scene = new Scene(LoginPage_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(LoginPage_page_scene);
         app_stage.show();
->>>>>>> origin/develop
+
     }
 
-}
+    @FXML
+    private void leverModul1(ActionEvent event) throws IOException {
+
+    Stage stage; 
+    Parent root;
+if (event.getSource()==btn1)
+    {
+      stage = new Stage();
+      root = FXMLLoader.load(getClass().getResource("FXMLModul1Delivery.fxml"));
+      stage.setScene(new Scene(root));
+      stage.setTitle("My modal window");
+      stage.initModality(Modality.APPLICATION_MODAL);
+      stage.initOwner(btn1.getScene().getWindow());
+      stage.show();
+    }
+    else
+    {
+    System.out.println("mo er kul");
+    }
+    
+}}
+ 
+
+        
+        
+        
+

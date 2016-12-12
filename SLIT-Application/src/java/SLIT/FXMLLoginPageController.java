@@ -121,11 +121,7 @@ public class FXMLLoginPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        FeedbackDataModel feedbackDataModel = this.feedbackManager.getFeedbackById(1);
-      
-        
-        this.feedbackTeacher.setText(feedbackDataModel.getTeacher_user().getTeacher_user().getUser_FirstName());
-        this.feedBack.setText(feedbackDataModel.getFeedback_Comment());
+
         
         
     }    

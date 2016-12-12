@@ -12,6 +12,7 @@ import EntityClasses.Delivery;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -22,6 +23,32 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
 
     @PersistenceContext(unitName = "SLIT-Server-ejbPU")
     private EntityManager em;
+    
+    
+    
+    
+    
+    @Override
+    public Boolean besvarelse(String deliveryName, String deliveryComment)
+    {
+         Delivery delivery = new Delivery();
+         
+        delivery.setDeliveryComment(deliveryComment);
+        delivery.setDeliveryName(deliveryName);
+        
+
+        try 
+        {
+            em.persist(delivery);
+            
+        }
+        catch(Exception e) 
+        {
+            e.printStackTrace();
+        }
+
+        return false; 
+    }
     
     @Override
     public DeliveryDataModel getDeliveryById(int deliveryID) {

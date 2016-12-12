@@ -77,10 +77,8 @@ public class DataModelConverter {
         DeliveryDataModel deliveryDataModel = new DeliveryDataModel();
         
         deliveryDataModel.setDelivery_Comment(delivery.getDeliveryComment());
-        deliveryDataModel.setDelivery_Date(delivery.getDeliveryDate());
         deliveryDataModel.setDelivery_ID(delivery.getDeliveryID());
         deliveryDataModel.setDelivery_Name(delivery.getDeliveryName());
-        deliveryDataModel.setDelivery_Status(delivery.getDeliveryStatus());
         deliveryDataModel.setFK_approvalQueue_ID(delivery.getFKapprovalQueueID().getApprovalQueueID());
         deliveryDataModel.setStudent_user_ID(delivery.getStudentuserID().getStudentuserID());
         deliveryDataModel.setTeacher_user_ID(delivery.getTeacheruserID().getTeacheruserID());

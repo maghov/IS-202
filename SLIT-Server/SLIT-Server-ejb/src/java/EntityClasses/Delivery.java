@@ -6,8 +6,6 @@
 package EntityClasses;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,14 +16,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -38,9 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Delivery.findAll", query = "SELECT d FROM Delivery d"),
     @NamedQuery(name = "Delivery.findByDeliveryID", query = "SELECT d FROM Delivery d WHERE d.deliveryID = :deliveryID"),
     @NamedQuery(name = "Delivery.findByDeliveryName", query = "SELECT d FROM Delivery d WHERE d.deliveryName = :deliveryName"),
-    @NamedQuery(name = "Delivery.findByDeliveryComment", query = "SELECT d FROM Delivery d WHERE d.deliveryComment = :deliveryComment"),
-    @NamedQuery(name = "Delivery.findByDeliveryStatus", query = "SELECT d FROM Delivery d WHERE d.deliveryStatus = :deliveryStatus"),
-    @NamedQuery(name = "Delivery.findByDeliveryDate", query = "SELECT d FROM Delivery d WHERE d.deliveryDate = :deliveryDate")})
+    @NamedQuery(name = "Delivery.findByDeliveryComment", query = "SELECT d FROM Delivery d WHERE d.deliveryComment = :deliveryComment")})
 public class Delivery implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -59,17 +51,6 @@ public class Delivery implements Serializable {
     @Size(min = 1, max = 256)
     @Column(name = "delivery_Comment")
     private String deliveryComment;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "delivery_Status")
-    private boolean deliveryStatus;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "delivery_Date")
-    @Temporal(TemporalType.DATE)
-    private Date deliveryDate;
-    @OneToMany(mappedBy = "fKdeliveryID")
-    private Collection<Feedback> feedbackCollection;
     @JoinColumn(name = "FK_approvalQueue_ID", referencedColumnName = "approvalQueue_ID")
     @ManyToOne
     private ApprovalQueue fKapprovalQueueID;
@@ -90,12 +71,10 @@ public class Delivery implements Serializable {
         this.deliveryID = deliveryID;
     }
 
-    public Delivery(Integer deliveryID, String deliveryName, String deliveryComment, boolean deliveryStatus, Date deliveryDate) {
+    public Delivery(Integer deliveryID, String deliveryName, String deliveryComment) {
         this.deliveryID = deliveryID;
         this.deliveryName = deliveryName;
         this.deliveryComment = deliveryComment;
-        this.deliveryStatus = deliveryStatus;
-        this.deliveryDate = deliveryDate;
     }
 
     public Integer getDeliveryID() {
@@ -120,31 +99,6 @@ public class Delivery implements Serializable {
 
     public void setDeliveryComment(String deliveryComment) {
         this.deliveryComment = deliveryComment;
-    }
-
-    public boolean getDeliveryStatus() {
-        return deliveryStatus;
-    }
-
-    public void setDeliveryStatus(boolean deliveryStatus) {
-        this.deliveryStatus = deliveryStatus;
-    }
-
-    public Date getDeliveryDate() {
-        return deliveryDate;
-    }
-
-    public void setDeliveryDate(Date deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-
-    @XmlTransient
-    public Collection<Feedback> getFeedbackCollection() {
-        return feedbackCollection;
-    }
-
-    public void setFeedbackCollection(Collection<Feedback> feedbackCollection) {
-        this.feedbackCollection = feedbackCollection;
     }
 
     public ApprovalQueue getFKapprovalQueueID() {

@@ -24,3 +24,4 @@ SLIT-Server/dist/gfdeploy/SLIT-Server/SLIT-Server-ejb_jar/.netbeans_automatic_bu
 *.css
 
 *.jpg
+/SLIT-Server/dist/
