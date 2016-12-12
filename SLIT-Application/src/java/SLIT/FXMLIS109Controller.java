@@ -41,6 +41,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -159,6 +160,10 @@ public class FXMLIS109Controller implements Initializable {
     private Tab Module5;
     @FXML
     private Label showModule5Feedback;
+    @FXML
+    private TextField insertDeliveryName;
+    @FXML
+    private TextField insertDeliveryComment;
 
 
     @Override
@@ -359,7 +364,7 @@ public class FXMLIS109Controller implements Initializable {
 
     Stage stage; 
     Parent root;
-if (event.getSource()==btn1)
+    if (event.getSource()==btn1)
     {
       stage = new Stage();
       root = FXMLLoader.load(getClass().getResource("FXMLModul1Delivery.fxml"));
@@ -374,7 +379,23 @@ if (event.getSource()==btn1)
     System.out.println("mo er kul");
     }
     
-}}
+}
+
+    @FXML
+    private void handleDeliveryLevering(ActionEvent event) {
+   
+            this.deliveryManager.besvarelse(this.insertDeliveryName.getText(), this.insertDeliveryComment.getText());
+                    
+            {
+
+            System.out.println("Levering fullført");
+                    
+            
+        }
+ 
+    }
+}
+
  
 
         

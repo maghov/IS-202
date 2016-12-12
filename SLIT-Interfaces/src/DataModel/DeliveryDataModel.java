@@ -5,7 +5,6 @@
  */
 package DataModel;
 
-import java.util.Date;
 
 /**
  *
@@ -13,23 +12,19 @@ import java.util.Date;
  */
 public class DeliveryDataModel {
     
-    public int delivery_ID;
+    private int delivery_ID;
     
-    public String delivery_Name;
+    private String delivery_Name;
     
-    public String delivery_Comment;
+    private String delivery_Comment;
     
-    public Boolean delivery_Status;
+    private int student_user_ID;
     
-    public Date delivery_Date;
+    private int teacher_user_ID;
     
-    public int student_user_ID;
+    private int tutor_user_ID;
     
-    public int teacher_user_ID;
-    
-    public int tutor_user_ID;
-    
-    public int FK_approvalQueue_ID;
+    private int FK_approvalQueue_ID;
 
     public int getDelivery_ID() {
         return delivery_ID;
@@ -53,22 +48,6 @@ public class DeliveryDataModel {
 
     public void setDelivery_Comment(String delivery_Comment) {
         this.delivery_Comment = delivery_Comment;
-    }
-
-    public Boolean getDelivery_Status() {
-        return delivery_Status;
-    }
-
-    public void setDelivery_Status(Boolean delivery_Status) {
-        this.delivery_Status = delivery_Status;
-    }
-
-    public Date getDelivery_Date() {
-        return delivery_Date;
-    }
-
-    public void setDelivery_Date(Date delivery_Date) {
-        this.delivery_Date = delivery_Date;
     }
 
     public int getStudent_user_ID() {

@@ -30,10 +30,6 @@ public class DeliveryManager {
         }
     }
     
-    public DeliveryDataModel getDeliveryById(int deliveryID)
-    {
-        return this.lookupDeliverySessionBeanRemote().getDeliveryById(deliveryID);
-    }
     
     public Boolean besvarelse(String deliveryName, String deliveryComment) {
         return this.lookupDeliverySessionBeanRemote().besvarelse(deliveryName, deliveryComment);

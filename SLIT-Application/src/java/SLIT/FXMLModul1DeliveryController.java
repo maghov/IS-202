@@ -36,7 +36,8 @@ public class FXMLModul1DeliveryController implements Initializable {
     @FXML
     private TextField headerModule1;
     
-    private DeliveryManager deliveryManager = new DeliveryManager();
+    
+    private final DeliveryManager deliveryManager = new DeliveryManager();
     @FXML
     private Label logDeliveryLabel;
 
@@ -47,20 +48,21 @@ public class FXMLModul1DeliveryController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+            
     @FXML
     private void handleModul1Delivery(ActionEvent event) throws IOException {
-        if(this.deliveryManager.besvarelse(this.headerModule1.getText(), this.modul1Tekst.getText()))
-        {
+        this.deliveryManager.besvarelse(this.headerModule1.getText(), this.modul1Tekst.getText());
+                    
+            {
 
-            this.logDeliveryLabel.setText("Levering fullført");
+            System.out.println("Levering fullført");
+                    
+            
         }
-        else
-        {
-            this.logDeliveryLabel.setText("Feil ved levering");
-        }
-        
+ 
     }
-
-
 }
+
+
+
+

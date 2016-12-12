@@ -15,7 +15,7 @@ import javax.ejb.Remote;
 @Remote
 public interface DeliverySessionBeanRemote {
 
-    DeliveryDataModel getDeliveryById(int deliveryID);
-    Boolean besvarelse(String deliveryName, String deliveryComment);
-    
+
+    boolean besvarelse(String deliveryName, String deliveryComment);
+
 }

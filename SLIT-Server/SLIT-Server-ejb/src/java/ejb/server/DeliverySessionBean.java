@@ -25,56 +25,25 @@ public class DeliverySessionBean implements DeliverySessionBeanRemote {
     private EntityManager em;
     
     
-    
-    
-    
+
     @Override
-    public Boolean besvarelse(String deliveryName, String deliveryComment)
-    {
-         Delivery delivery = new Delivery();
-         
+    public boolean besvarelse(String deliveryName, String deliveryComment)
+    {   
+        try {
+        Delivery delivery = new Delivery();
         delivery.setDeliveryComment(deliveryComment);
         delivery.setDeliveryName(deliveryName);
-        
-
-        try 
-        {
-            em.persist(delivery);
+        em.persist(delivery);
             
+          return true; 
         }
         catch(Exception e) 
         {
             e.printStackTrace();
         }
+        
 
-        return false; 
+        return true; 
     }
     
-    @Override
-    public DeliveryDataModel getDeliveryById(int deliveryID) {
-        
-        DeliveryDataModel deliveryDataModel = new DeliveryDataModel();
-        
-        try 
-        {
-            Delivery delivery = em.find(Delivery.class, deliveryID);
-        
-            
-            if (delivery != null) {
-                
-                deliveryDataModel = DataModelConverter.convertDeliveryEntityToDeliveryDataModel(delivery);
-                
-            }
-                
-        
-        }
-        catch(Exception e) 
-        {
-            e.printStackTrace();
-        }
-        
-        
-        return deliveryDataModel;
-    }
-
 }
