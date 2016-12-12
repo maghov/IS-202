@@ -193,30 +193,11 @@ public class UserSessionBean implements UserSessionBeanRemote {
         user.setUserEmail(mail);
         user.setUserPhone(Phone);
         
+        
+        
         try 
         {
             em.persist(user);
-            
-            Users registeredUser = this.getUserFromMail(user.getUserEmail()); 
-            
-            if(registeredUser != null)
-            {
-                System.out.println("Registered user:" + registeredUser.getUserID()); 
-                
-                Student student = new Student();
-                student.setUsers(registeredUser);
-                student.setStudentuserID(registeredUser.getUserID());
-                
-                Query query = em.createQuery("INSERT INTO Student VALUES(:userid)"); 
-                
-                query.setParameter("userid", registeredUser.getUserID()); 
-               
-                //em.persist(student);
-            }
-            
-            //student.setStudentuserID(this.getUserFromMail(user.getUserEmail()).getUserID());  
-            
-            //em.persist(student);
             
             return true; 
         }

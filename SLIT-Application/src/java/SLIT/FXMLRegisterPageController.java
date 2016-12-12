@@ -32,7 +32,7 @@ public class FXMLRegisterPageController implements Initializable {
     @FXML
     private TextField passwordRegister;
     
-    private UserManager userManager = new UserManager();
+    private final UserManager userManager = new UserManager();
     
     @FXML
     private TextField lastNameRegister;
