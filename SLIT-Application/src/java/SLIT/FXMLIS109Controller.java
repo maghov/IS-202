@@ -124,15 +124,11 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private Label showModule5Aim;
     @FXML
-<<<<<<< Updated upstream
     private Circle showModule5Approved;
     @FXML
     private Button btn1;
-=======
-    private Label showModule5Feedback;
     @FXML
-    private Circle showModule5Approved;
->>>>>>> Stashed changes
+    private Label showModule5Feedback;
     @FXML
     private TableColumn<?, ?> moduleName;
     @FXML
@@ -163,16 +159,10 @@ public class FXMLIS109Controller implements Initializable {
     private Label showFeedbackModul4;
     @FXML
     private Tab Module5;
-<<<<<<< Updated upstream
-    @FXML
-    private Label showModule5Feedback;
     @FXML
     private TextField insertDeliveryName;
     @FXML
     private TextField insertDeliveryComment;
-=======
-
->>>>>>> Stashed changes
 
 
     @Override
@@ -367,7 +357,7 @@ public class FXMLIS109Controller implements Initializable {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(LoginPage_page_scene);
         app_stage.show();
-<<<<<<< Updated upstream
+
 
     }
 
@@ -389,8 +379,7 @@ public class FXMLIS109Controller implements Initializable {
     else
     {
     System.out.println("mo er kul");
-=======
->>>>>>> Stashed changes
+
     }
     
 }
@@ -408,7 +397,12 @@ public class FXMLIS109Controller implements Initializable {
         }
  
     }
+
+    @FXML
+    private void handleIS109Task(Event event) {
+    }
 }
+
 
  
 
@@ -416,21 +410,5 @@ public class FXMLIS109Controller implements Initializable {
         
         
 
-<<<<<<< Updated upstream
-=======
-    @FXML
-    private void handleIS109Task(Event event) {
-        CoursePlanDataModel coursePlanDataModel = this.coursePlanManager.getCoursePlanByID(1);
-                
-           if (coursePlanDataModel.getCoursePlan_ID() != 0) {
-            this.showCoursePlanPlan.setText(coursePlanDataModel.getCoursePlan_Plan());
-            this.showCoursePlanForelesning.setText(DateFormat.getDateInstance().format(coursePlanDataModel.getCoursePlan_Forelesning()));
-           }
-        
-           else {
-               System.out.println("TEST");
-           }
-        
-    }
-}
->>>>>>> Stashed changes
+
+ 
