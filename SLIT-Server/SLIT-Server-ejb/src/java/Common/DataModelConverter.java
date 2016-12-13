@@ -5,12 +5,14 @@
  */
 package Common;
 
+import DataModel.CoursePlanDataModel;
 import DataModel.DeliveryDataModel;
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
 import DataModel.StudentDataModel;
 import DataModel.TeacherDataModel;
 import DataModel.UserDataModel;
+import EntityClasses.CoursePlan;
 import EntityClasses.Feedback;
 import EntityClasses.Module;
 import EntityClasses.Student;
@@ -189,6 +191,17 @@ public class DataModelConverter {
          
     
           
+    }
+    
+    public static CoursePlanDataModel convertCoursePlanEntityToCoursePlanDataModel(CoursePlan coursePlan){
+        CoursePlanDataModel coursePlanDataModel = new CoursePlanDataModel();
+        
+        coursePlanDataModel.setCoursePlan_ID(coursePlan.getCoursePlanID());
+        coursePlanDataModel.setCoursePlan_Name(coursePlan.getCoursePlanName());
+        coursePlanDataModel.setCoursePlan_Forelesning(coursePlan.getCoursePlanForelesning());
+        coursePlanDataModel.setCoursePlan_Plan(coursePlan.getCoursePlanPlan());
+        
+        return coursePlanDataModel;
     }
     
 }

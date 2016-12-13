@@ -5,15 +5,15 @@
  */
 package SLIT;
 
-import DataModel.DeliveryDataModel;
+import DataModel.CoursePlanDataModel;
 import DataModel.FeedbackDataModel;
 import DataModel.ModuleDataModel;
-import DataModel.TeacherDataModel;
 import DataModel.UserDataModel;
 import Framework.DeliveryManager;
 import Framework.ModuleManager;
 import Framework.FeedbackManager;
 import Framework.UserManager;
+import Framework.CoursePlanManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,7 +26,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -35,8 +34,6 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Menu;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -78,6 +75,8 @@ public class FXMLIS109Controller implements Initializable {
     private final FeedbackManager feedbackManager = new FeedbackManager();
 
     private final UserManager userManager = new UserManager();
+    
+    private final CoursePlanManager coursePlanManager = new CoursePlanManager();
 
     public static UserDataModel user;
 
@@ -125,9 +124,15 @@ public class FXMLIS109Controller implements Initializable {
     @FXML
     private Label showModule5Aim;
     @FXML
+<<<<<<< Updated upstream
     private Circle showModule5Approved;
     @FXML
     private Button btn1;
+=======
+    private Label showModule5Feedback;
+    @FXML
+    private Circle showModule5Approved;
+>>>>>>> Stashed changes
     @FXML
     private TableColumn<?, ?> moduleName;
     @FXML
@@ -158,12 +163,16 @@ public class FXMLIS109Controller implements Initializable {
     private Label showFeedbackModul4;
     @FXML
     private Tab Module5;
+<<<<<<< Updated upstream
     @FXML
     private Label showModule5Feedback;
     @FXML
     private TextField insertDeliveryName;
     @FXML
     private TextField insertDeliveryComment;
+=======
+
+>>>>>>> Stashed changes
 
 
     @Override
@@ -345,7 +354,9 @@ public class FXMLIS109Controller implements Initializable {
                 this.showModule5Obligatory.setText("Nei");
 
             }
-        } else {
+        }
+        
+            else {
             System.out.println("Denne Modulen Finnes Ikke.");
         }
     }
@@ -356,6 +367,7 @@ public class FXMLIS109Controller implements Initializable {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(LoginPage_page_scene);
         app_stage.show();
+<<<<<<< Updated upstream
 
     }
 
@@ -377,6 +389,8 @@ public class FXMLIS109Controller implements Initializable {
     else
     {
     System.out.println("mo er kul");
+=======
+>>>>>>> Stashed changes
     }
     
 }
@@ -402,3 +416,21 @@ public class FXMLIS109Controller implements Initializable {
         
         
 
+<<<<<<< Updated upstream
+=======
+    @FXML
+    private void handleIS109Task(Event event) {
+        CoursePlanDataModel coursePlanDataModel = this.coursePlanManager.getCoursePlanByID(1);
+                
+           if (coursePlanDataModel.getCoursePlan_ID() != 0) {
+            this.showCoursePlanPlan.setText(coursePlanDataModel.getCoursePlan_Plan());
+            this.showCoursePlanForelesning.setText(DateFormat.getDateInstance().format(coursePlanDataModel.getCoursePlan_Forelesning()));
+           }
+        
+           else {
+               System.out.println("TEST");
+           }
+        
+    }
+}
+>>>>>>> Stashed changes

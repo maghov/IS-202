@@ -6,6 +6,7 @@
 package EntityClasses;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,13 +16,15 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Mohammad
+ * @author Johnjnsen
  */
 @Entity
 @Table(name = "CoursePlan")
@@ -29,7 +32,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "CoursePlan.findAll", query = "SELECT c FROM CoursePlan c"),
     @NamedQuery(name = "CoursePlan.findByCoursePlanID", query = "SELECT c FROM CoursePlan c WHERE c.coursePlanID = :coursePlanID"),
-    @NamedQuery(name = "CoursePlan.findByCoursePlanName", query = "SELECT c FROM CoursePlan c WHERE c.coursePlanName = :coursePlanName")})
+    @NamedQuery(name = "CoursePlan.findByCoursePlanName", query = "SELECT c FROM CoursePlan c WHERE c.coursePlanName = :coursePlanName"),
+    @NamedQuery(name = "CoursePlan.findByCoursePlanForelesning", query = "SELECT c FROM CoursePlan c WHERE c.coursePlanForelesning = :coursePlanForelesning"),
+    @NamedQuery(name = "CoursePlan.findByCoursePlanPlan", query = "SELECT c FROM CoursePlan c WHERE c.coursePlanPlan = :coursePlanPlan")})
 public class CoursePlan implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -43,6 +48,16 @@ public class CoursePlan implements Serializable {
     @Size(min = 1, max = 64)
     @Column(name = "coursePlan_Name")
     private String coursePlanName;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "coursePlan_Forelesning")
+    @Temporal(TemporalType.DATE)
+    private Date coursePlanForelesning;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 64)
+    @Column(name = "coursePlan_Plan")
+    private String coursePlanPlan;
 
     public CoursePlan() {
     }
@@ -51,9 +66,11 @@ public class CoursePlan implements Serializable {
         this.coursePlanID = coursePlanID;
     }
 
-    public CoursePlan(Integer coursePlanID, String coursePlanName) {
+    public CoursePlan(Integer coursePlanID, String coursePlanName, Date coursePlanForelesning, String coursePlanPlan) {
         this.coursePlanID = coursePlanID;
         this.coursePlanName = coursePlanName;
+        this.coursePlanForelesning = coursePlanForelesning;
+        this.coursePlanPlan = coursePlanPlan;
     }
 
     public Integer getCoursePlanID() {
@@ -70,6 +87,22 @@ public class CoursePlan implements Serializable {
 
     public void setCoursePlanName(String coursePlanName) {
         this.coursePlanName = coursePlanName;
+    }
+
+    public Date getCoursePlanForelesning() {
+        return coursePlanForelesning;
+    }
+
+    public void setCoursePlanForelesning(Date coursePlanForelesning) {
+        this.coursePlanForelesning = coursePlanForelesning;
+    }
+
+    public String getCoursePlanPlan() {
+        return coursePlanPlan;
+    }
+
+    public void setCoursePlanPlan(String coursePlanPlan) {
+        this.coursePlanPlan = coursePlanPlan;
     }
 
     @Override

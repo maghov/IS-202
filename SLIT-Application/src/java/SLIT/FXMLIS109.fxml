@@ -21,7 +21,7 @@
    <children>
       <TabPane layoutY="22.0" prefHeight="515.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="IS-109">
+          <Tab onSelectionChanged="#handleIS109Task" text="IS-109">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="608.0">
                      <children>
